@@ -1,0 +1,119 @@
+title: 常用导航
+subtitle: 我的常用网站快捷入口
+
+categories:
+  - name: 常用导航
+    icon: fas fa-star
+    sites:
+      - name: Google
+        url: https://www.google.com.hk/
+        icon: fab fa-google
+        description: 谷歌搜索
+      - name: Gemini
+        url: https://gemini.google.com/app?pli=1
+        icon: fab fa-google
+        description: Google AI助手
+      - name: 飞牛Nas
+        url: http://10.1.1.66:5666/
+        icon: fas fa-server
+        description: 个人NAS服务器
+      - name: Home Assistant
+        url: http://10.1.1.66:8123/lovelace/default_view
+        icon: fas fa-home
+        description: 智能家居控制
+      - name: 青龙
+        url: http://10.1.1.66:15700/crontab
+        icon: fas fa-dragon
+        description: 定时任务面板
+      - name: LINUX DO
+        url: https://linux.do/
+        icon: fab fa-linux
+        description: Linux技术社区
+      - name: NodeSeek
+        url: https://www.nodeseek.com/
+        icon: fas fa-server
+        description: 服务器资源社区
+      - name: CF
+        url: https://dash.cloudflare.com/e7f6a487169d1ea0815c6b990ca3e61f/
+        icon: fas fa-cloud
+        description: Cloudflare控制台
+      - name: One Hub
+        url: https://drfy-1.hf.space/
+        icon: fas fa-hub
+        description: API统一管理
+      - name: 辰星鸡场
+        url: https://tz.ggaa.eu.org/
+        icon: fas fa-chicken
+        description: 服务器资源
+      - name: Oracle MyLearn
+        url: https://mylearn.oracle.com/ou/learning-path/become-a-mysql-80-database-admin-professional/97589
+        icon: fas fa-graduation-cap
+        description: Oracle学习平台
+      - name: 卡号圈 - 电信
+        url: https://kahaoquan.com/forum.php?mod=forumdisplay&fid=10
+        icon: fas fa-sim-card
+        description: 电信卡号资源
+      - name: AI知识库
+        url: https://agijuejin.feishu.cn/wiki/IaMEwtLr0iEqPzkkGikcJPcgnpc
+        icon: fas fa-brain
+        description: AI技术知识库
+      - name: AI工具集官网
+        url: https://ai-bot.cn/#term-38
+        icon: fas fa-robot
+        description: AI工具导航大全
+      - name: ttainidx的贴吧
+        url: https://tieba.baidu.com/home/main?id=tb.1.45cd0b9a.XA60Ah1A5f8HvThRzTZV5A&fr=userbar
+        icon: fas fa-comments
+        description: 百度贴吧
+      - name: 手机归属地查询
+        url: https://tool.lu/mobile/
+        icon: fas fa-mobile-alt
+        description: 手机号码归属地
+      - name: 热门 | RSSHub
+        url: https://docs.rsshub.app/zh/routes/popular#%E7%94%A8%E6%88%B7%E7%AC%94%E8%AE%B0-%E6%94%B6%E8%97%8F
+        icon: fas fa-rss
+        description: RSS订阅源
+      - name: 运营商测速
+        url: https://net.ljxnet.cn/
+        icon: fas fa-tachometer-alt
+        description: 网络速度测试
+      - name: Drfy-Navi
+        url: https://llll.app.tc/
+        icon: fas fa-compass
+        description: 个人导航站
+      - name: 双不限·神卡大全
+        url: https://www.kdocs.cn/l/chpsCfPYI7tg?R=L1MvMTA=
+        icon: fas fa-file-alt
+        description: 手机卡资源
+      - name: Google AI Studio
+        url: https://aistudio.google.com/prompts/new_chat
+        icon: fab fa-google
+        description: Google AI开发平台
+      - name: 油猴插件搜索
+        url: https://www.userscript.zone/
+        icon: fas fa-user-secret
+        description: 浏览器脚本搜索
+      - name: NiuLink - 节点管理
+        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&size=10&owner=self&sortKey=bind&sortType=desc
+        icon: fas fa-network-wired
+        description: NiuLink节点管理
+      - name: 布局拼图工具
+        url: https://img.ops-coffee.com/photo/
+        icon: fas fa-images
+        description: 在线图片拼接
+      - name: 超哥家里云爱快
+        url: http://10.1.1.1:3579/#/system-overview
+        icon: fas fa-router
+        description: 爱快路由系统
+      - name: 253-ESXi
+        url: https://10.1.1.253/ui/#/login
+        icon: fas fa-server
+        description: ESXi虚拟化管理
+      - name: 153-esxi
+        url: https://10.1.1.153/ui/#/login
+        icon: fas fa-server
+        description: ESXi虚拟化管理
+      - name: free-llm-api-resources
+        url: https://jscheah.me/free-llm-api-resources/
+        icon: fas fa-brain
+        description: 免费LLM API资源列表
