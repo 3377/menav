@@ -1,5 +1,5 @@
 # 自动生成的书签配置文件
-# 由bookmark-processor.js生成于 2025-11-09T15:42:21.690Z
+# 由bookmark-processor.js生成于 2025-11-09T15:50:01.123Z
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
@@ -2179,15 +2179,5 @@ categories:
         sites:
           - name: 书签集
             url: chrome://bookmarks/
-            icon: fas fa-link
-            description: ""
-      - name: 其他收藏夹
-        icon: fas fa-folder
-        path:
-          - ""
-          - 其他收藏夹
-        sites:
-          - name: 隧道 - Cloudflare One
-            url: https://one.dash.cloudflare.com/e7f6a487169d1ea0815c6b990ca3e61f/networks/tunnels
             icon: fas fa-link
             description: ""
