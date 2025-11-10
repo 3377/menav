@@ -281,9 +281,8 @@ function loadModularConfig(dirPath) {
                 const configKey = path.basename(file, path.extname(file));
 
                 // 特殊处理home.yml中的categories字段
-                if (configKey === 'home' && fileConfig.categories) {
-                    config.categories = fileConfig.categories;
-                }
+                // 注意：不再设置全局config.categories，避免影响其他页面
+                // categories会通过config.home.categories访问
 
                 // 将页面配置添加到主配置对象
                 config[configKey] = fileConfig;
@@ -300,8 +299,11 @@ function loadModularConfig(dirPath) {
             const extractedContent = extractBookmarkFolder(config.bookmarks.categories, bookmarkFolder);
             
             if (extractedContent) {
-                // 将提取的内容设置为首页的categories
-                config.categories = extractedContent;
+                // 将提取的内容设置为首页的categories（只影响home页面）
+                if (!config.home) {
+                    config.home = {};
+                }
+                config.home.categories = extractedContent;
                 console.log(`首页已配置为显示书签文件夹: ${bookmarkFolder.filter(p => p).join(' > ')}`);
             } else {
                 console.warn(`警告: 未找到指定的书签文件夹路径: ${bookmarkFolder.join(' > ')}`);
@@ -490,11 +492,7 @@ function ensureConfigDefaults(config) {
     category.sites.forEach(processSiteDefaults);
   }
 
-  // 为首页的每个类别和站点设置默认值
-  result.categories = result.categories || [];
-  result.categories.forEach(processCategoryDefaults);
-
-  // 为所有页面配置中的类别和站点设置默认值
+  // 为所有页面配置中的类别和站点设置默认值（包括首页）
   Object.keys(result).forEach(key => {
     const pageConfig = result[key];
     // 检查是否是页面配置对象且包含categories数组
@@ -536,8 +534,8 @@ function getSubmenuForNavItem(navItem, config) {
   }
 
   // 首页页面添加子菜单（分类）
-  if (navItem.id === 'home' && Array.isArray(config.categories)) {
-    return config.categories;
+  if (navItem.id === 'home' && config.home && Array.isArray(config.home.categories)) {
+    return config.home.categories;
   }
   // 书签页面添加子菜单（分类）
   else if (navItem.id === 'bookmarks' && config.bookmarks && Array.isArray(config.bookmarks.categories)) {

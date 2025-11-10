@@ -3,7 +3,7 @@
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
-title: 我的书签
+title: 多层级书签
 subtitle: 从浏览器导入的书签收藏
 categories:
   - name: ""
