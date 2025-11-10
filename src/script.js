@@ -454,20 +454,40 @@ function saveToggleState(element, state) {
 }
 
 // 恢复切换状态
-function restoreToggleState(element) {
+function restoreToggleState(element, defaultExpanded) {
     const type = element.dataset.type;
     const name = element.dataset.name;
     const level = element.dataset.level || '1';
     const key = `menav-toggle-${type}-${level}-${name}`;
     const savedState = localStorage.getItem(key);
     
+    // 优先使用localStorage中的状态
     if (savedState === 'collapsed') {
         element.classList.add('collapsed');
+    } else if (savedState === 'expanded') {
+        element.classList.remove('collapsed');
+    } else {
+        // 如果没有保存的状态，使用配置中的默认值
+        // defaultExpanded为false时默认收起（添加collapsed类）
+        if (!defaultExpanded) {
+            element.classList.add('collapsed');
+        }
     }
 }
 
 // 初始化嵌套分类
 function initializeNestedCategories() {
+    // 读取配置中的defaultExpanded设置
+    let defaultExpanded = false;
+    try {
+        const configData = window.MeNav.getConfig();
+        if (configData && configData.bookmarksConfig) {
+            defaultExpanded = configData.bookmarksConfig.defaultExpanded || false;
+        }
+    } catch (e) {
+        console.warn('无法读取书签配置，使用默认值（收起）');
+    }
+    
     // 为所有可折叠元素添加切换功能
     document.querySelectorAll('[data-toggle="category"], [data-toggle="group"]').forEach(header => {
         header.addEventListener('click', function(e) {
@@ -476,8 +496,8 @@ function initializeNestedCategories() {
             toggleNestedElement(container);
         });
         
-        // 恢复保存的状态
-        restoreToggleState(header.parentElement);
+        // 恢复保存的状态或应用默认配置
+        restoreToggleState(header.parentElement, defaultExpanded);
     });
 }
 

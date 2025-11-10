@@ -36,6 +36,21 @@ profile:
   subtitle: Welcome to Drfyup's bookmarks
   description: MeNav
 
+# 首页配置：指定首页显示哪个书签文件夹的内容
+homepage:
+  # 从书签中动态提取指定路径的文件夹作为首页内容
+  # 格式：["分类名", "子分类名", "分组名"] 
+  # 示例：["", "收藏夹栏", "常用导航"] 表示显示 收藏夹栏>常用导航 这个文件夹的内容
+  bookmarkFolder: ["", "收藏夹栏", "常用导航"]
+  # 是否启用（true: 使用书签文件夹，false: 使用传统的 pages/home.yml 配置）
+  enabled: true
+
+# 多层级书签配置
+bookmarks:
+  # 是否默认展开所有文件夹（true: 展开, false: 收起，默认为false）
+  # 用户手动切换的状态会保存在localStorage中，优先级更高
+  defaultExpanded: false
+
 # 社交媒体链接：显示在侧边栏底部；可按需增删
 social:
   - name: GitHub

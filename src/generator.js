@@ -291,7 +291,88 @@ function loadModularConfig(dirPath) {
         });
     }
 
+    // 处理首页动态书签文件夹配置
+    if (siteConfig && siteConfig.homepage && siteConfig.homepage.enabled && siteConfig.homepage.bookmarkFolder) {
+        const bookmarkFolder = siteConfig.homepage.bookmarkFolder;
+        
+        // 从bookmarks配置中提取指定路径的内容
+        if (config.bookmarks && config.bookmarks.categories) {
+            const extractedContent = extractBookmarkFolder(config.bookmarks.categories, bookmarkFolder);
+            
+            if (extractedContent) {
+                // 将提取的内容设置为首页的categories
+                config.categories = extractedContent;
+                console.log(`首页已配置为显示书签文件夹: ${bookmarkFolder.filter(p => p).join(' > ')}`);
+            } else {
+                console.warn(`警告: 未找到指定的书签文件夹路径: ${bookmarkFolder.join(' > ')}`);
+            }
+        }
+    }
+
     return config;
+}
+
+/**
+ * 从书签分类中提取指定路径的文件夹内容
+ * @param {Array} categories 书签分类数组
+ * @param {Array} folderPath 文件夹路径数组 [分类名, 子分类名, 分组名]
+ * @returns {Array|null} 提取的内容数组或null
+ */
+function extractBookmarkFolder(categories, folderPath) {
+    if (!categories || !Array.isArray(categories) || !folderPath || !Array.isArray(folderPath)) {
+        return null;
+    }
+
+    // 移除路径中的空字符串并规范化
+    const normalizedPath = folderPath.map(p => String(p || '').trim());
+    
+    // 遍历第一层分类
+    for (const category of categories) {
+        if (String(category.name || '').trim() === normalizedPath[0]) {
+            // 如果路径只有一层，返回该分类的sites
+            if (normalizedPath.length === 1) {
+                return category.sites ? [{ name: category.name, icon: category.icon, sites: category.sites }] : null;
+            }
+            
+            // 如果有子分类，继续查找
+            if (category.subcategories && normalizedPath.length >= 2) {
+                for (const subcategory of category.subcategories) {
+                    if (String(subcategory.name || '').trim() === normalizedPath[1]) {
+                        // 如果路径只有两层，返回该子分类的sites或groups
+                        if (normalizedPath.length === 2) {
+                            if (subcategory.sites) {
+                                return [{ name: subcategory.name, icon: subcategory.icon, sites: subcategory.sites }];
+                            }
+                            // 如果有groups，返回所有groups的sites作为分类
+                            if (subcategory.groups) {
+                                return subcategory.groups.map(group => ({
+                                    name: group.name,
+                                    icon: group.icon,
+                                    sites: group.sites || []
+                                }));
+                            }
+                        }
+                        
+                        // 如果路径有三层，在groups中查找
+                        if (subcategory.groups && normalizedPath.length >= 3) {
+                            for (const group of subcategory.groups) {
+                                if (String(group.name || '').trim() === normalizedPath[2]) {
+                                    // 返回该分组的sites作为一个分类
+                                    return group.sites ? [{ 
+                                        name: group.name, 
+                                        icon: group.icon, 
+                                        sites: group.sites 
+                                    }] : null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return null;
 }
 
 /**
@@ -467,7 +548,11 @@ function prepareRenderData(config) {
   renderData.configJSON = JSON.stringify({
     version: process.env.npm_package_version || '1.0.0',
     timestamp: new Date().toISOString(),
-    data: renderData // 使用经过处理的renderData而不是原始config
+    data: renderData, // 使用经过处理的renderData而不是原始config
+    // 明确传递多层级书签配置
+    bookmarksConfig: {
+      defaultExpanded: renderData.site && renderData.site.bookmarks && renderData.site.bookmarks.defaultExpanded || false
+    }
   });
 
   // 添加导航项的活动状态标记和子菜单
