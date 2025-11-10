@@ -57,7 +57,7 @@ bookmarks:
   # 1 = 展开第一层（例如：展开"收藏夹栏"显示下面的groups）
   # 2 = 展开到第二层（例如：展开groups显示里面的书签）
   # 用户手动切换的状态会保存在localStorage中，优先级更高
-  defaultExpandDepth: 1
+  defaultExpandDepth: 2
 
 # 社交媒体链接：显示在侧边栏底部；可按需增删
 social:
