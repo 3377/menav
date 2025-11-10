@@ -454,38 +454,67 @@ function saveToggleState(element, state) {
 }
 
 // 恢复切换状态
-function restoreToggleState(element, defaultExpanded) {
+function restoreToggleState(element, expandConfig) {
     const type = element.dataset.type;
     const name = element.dataset.name;
-    const level = element.dataset.level || '1';
+    const level = parseInt(element.dataset.level || '1');
     const key = `menav-toggle-${type}-${level}-${name}`;
     const savedState = localStorage.getItem(key);
     
     // 优先使用localStorage中的状态
     if (savedState === 'collapsed') {
         element.classList.add('collapsed');
+        return;
     } else if (savedState === 'expanded') {
         element.classList.remove('collapsed');
-    } else {
-        // 如果没有保存的状态，使用配置中的默认值
-        // defaultExpanded为false时默认收起（添加collapsed类）
-        if (!defaultExpanded) {
-            element.classList.add('collapsed');
-        }
+        return;
+    }
+    
+    // 如果没有保存的状态，使用配置中的默认值
+    let shouldExpand = false;
+    
+    // 根据配置判断是否展开
+    if (expandConfig.mode === 'depth') {
+        // 按层级深度展开
+        shouldExpand = level <= expandConfig.depth;
+    } else if (expandConfig.mode === 'all') {
+        // 全部展开
+        shouldExpand = true;
+    } else if (expandConfig.mode === 'none') {
+        // 全部收起
+        shouldExpand = false;
+    }
+    
+    if (!shouldExpand) {
+        element.classList.add('collapsed');
     }
 }
 
 // 初始化嵌套分类
 function initializeNestedCategories() {
-    // 读取配置中的defaultExpanded设置
-    let defaultExpanded = false;
+    // 读取配置
+    let bookmarksExpandConfig = { mode: 'none', depth: 0 };
+    let homepageExpandConfig = { mode: 'none', depth: 0 };
+    
     try {
         const configData = window.MeNav.getConfig();
+        
+        // 读取书签页面配置
         if (configData && configData.bookmarksConfig) {
-            defaultExpanded = configData.bookmarksConfig.defaultExpanded || false;
+            const depth = configData.bookmarksConfig.defaultExpandDepth || 0;
+            if (depth > 0) {
+                bookmarksExpandConfig = { mode: 'depth', depth: depth };
+            }
+        }
+        
+        // 读取首页配置
+        if (configData && configData.homepageConfig) {
+            if (configData.homepageConfig.defaultExpanded) {
+                homepageExpandConfig = { mode: 'all' };
+            }
         }
     } catch (e) {
-        console.warn('无法读取书签配置，使用默认值（收起）');
+        console.warn('无法读取配置，使用默认值（收起）');
     }
     
     // 为所有可折叠元素添加切换功能
@@ -496,8 +525,19 @@ function initializeNestedCategories() {
             toggleNestedElement(container);
         });
         
+        // 判断当前元素属于哪个页面
+        const container = header.parentElement;
+        const pageElement = container.closest('.page');
+        const pageId = pageElement ? pageElement.id : '';
+        
+        // 根据页面选择展开配置
+        let expandConfig = bookmarksExpandConfig;
+        if (pageId === 'home') {
+            expandConfig = homepageExpandConfig;
+        }
+        
         // 恢复保存的状态或应用默认配置
-        restoreToggleState(header.parentElement, defaultExpanded);
+        restoreToggleState(container, expandConfig);
     });
 }
 

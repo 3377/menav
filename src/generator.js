@@ -313,6 +313,47 @@ function loadModularConfig(dirPath) {
 }
 
 /**
+ * 跳过顶层空分类，提取subcategories作为新的categories
+ * @param {Array} categories 原始分类数组
+ * @returns {Array} 处理后的分类数组
+ */
+function skipEmptyTopCategory(categories) {
+    if (!categories || !Array.isArray(categories) || categories.length === 0) {
+        return categories;
+    }
+    
+    // 检查第一层是否有空名称的分类
+    const emptyCategory = categories.find(cat => !cat.name || cat.name.trim() === '');
+    
+    if (emptyCategory && emptyCategory.subcategories && Array.isArray(emptyCategory.subcategories)) {
+        // 将subcategories提升为顶层categories，并调整层级
+        const newCategories = emptyCategory.subcategories.map(subcat => {
+            const newSubcat = {
+                ...subcat,
+                level: 1  // 设置为第1层
+            };
+            
+            // 如果有groups，调整groups的层级
+            if (newSubcat.groups && Array.isArray(newSubcat.groups)) {
+                newSubcat.groups = newSubcat.groups.map(group => ({
+                    ...group,
+                    level: 2  // groups设置为第2层
+                }));
+            }
+            
+            return newSubcat;
+        });
+        
+        // 如果还有其他非空分类，合并它们
+        const otherCategories = categories.filter(cat => cat.name && cat.name.trim() !== '');
+        
+        return [...newCategories, ...otherCategories];
+    }
+    
+    return categories;
+}
+
+/**
  * 从书签分类中提取指定路径的文件夹内容
  * @param {Array} categories 书签分类数组
  * @param {Array} folderPath 文件夹路径数组 [分类名, 子分类名, 分组名]
@@ -500,7 +541,15 @@ function getSubmenuForNavItem(navItem, config) {
   }
   // 书签页面添加子菜单（分类）
   else if (navItem.id === 'bookmarks' && config.bookmarks && Array.isArray(config.bookmarks.categories)) {
-    return config.bookmarks.categories;
+    // 检查是否需要跳过顶层空分类
+    let categories = config.bookmarks.categories;
+    
+    if (config.site && config.site.bookmarks && config.site.bookmarks.skipEmptyTopCategory) {
+      // 跳过第一层空分类，提取其subcategories作为新的categories
+      categories = skipEmptyTopCategory(categories);
+    }
+    
+    return categories;
   }
   // 项目页面添加子菜单
   else if (navItem.id === 'projects' && config.projects && Array.isArray(config.projects.categories)) {
@@ -551,7 +600,12 @@ function prepareRenderData(config) {
     data: renderData, // 使用经过处理的renderData而不是原始config
     // 明确传递多层级书签配置
     bookmarksConfig: {
-      defaultExpanded: renderData.site && renderData.site.bookmarks && renderData.site.bookmarks.defaultExpanded || false
+      skipEmptyTopCategory: renderData.site && renderData.site.bookmarks && renderData.site.bookmarks.skipEmptyTopCategory || false,
+      defaultExpandDepth: renderData.site && renderData.site.bookmarks && renderData.site.bookmarks.defaultExpandDepth || 0
+    },
+    // 传递首页配置
+    homepageConfig: {
+      defaultExpanded: renderData.site && renderData.site.homepage && renderData.site.homepage.defaultExpanded || false
     }
   });
 
