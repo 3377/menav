@@ -1,5 +1,5 @@
 # 自动生成的书签配置文件
-# 由bookmark-processor.js生成于 2025-11-15T07:26:31.640Z
+# 由bookmark-processor.js生成于 2025-11-15T07:31:27.977Z
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
@@ -1985,6 +1985,14 @@ categories:
                     icon: fas fa-link
                     description: ""
             sites:
+              - name: free-llm-api-resources | A list of free LLM inference resources accessible via API.
+                url: https://jscheah.me/free-llm-api-resources/
+                icon: fas fa-link
+                description: ""
+              - name: AI知识库
+                url: https://agijuejin.feishu.cn/wiki/IaMEwtLr0iEqPzkkGikcJPcgnpc
+                icon: fas fa-link
+                description: ""
               - name: Genspark - 古风武侠美女图像生成任务
                 url: https://www.genspark.ai/agents?id=d798c059-1a49-4927-8a49-ada3b09d669d
                 icon: fas fa-link
@@ -2112,14 +2120,6 @@ categories:
                 url: https://kahaoquan.com/forum.php?mod=forumdisplay&amp;fid=10
                 icon: fas fa-link
                 description: ""
-              - name: AI知识库
-                url: https://agijuejin.feishu.cn/wiki/IaMEwtLr0iEqPzkkGikcJPcgnpc
-                icon: fas fa-link
-                description: ""
-              - name: AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全
-                url: https://ai-bot.cn/#term-38
-                icon: fas fa-link
-                description: ""
               - name: ttainidx的贴吧
                 url: https://tieba.baidu.com/home/main?id=tb.1.45cd0b9a.XA60Ah1A5f8HvThRzTZV5A&amp;fr=userbar
                 icon: fas fa-link
@@ -2170,10 +2170,6 @@ categories:
                 description: ""
               - name: 153-esxi
                 url: https://10.1.1.153/ui/#/login
-                icon: fas fa-link
-                description: ""
-              - name: free-llm-api-resources | A list of free LLM inference resources accessible via API.
-                url: https://jscheah.me/free-llm-api-resources/
                 icon: fas fa-link
                 description: ""
         sites:
