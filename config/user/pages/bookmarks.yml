@@ -1,5 +1,5 @@
 # 自动生成的书签配置文件
-# 由bookmark-processor.js生成于 2025-11-15T07:31:27.977Z
+# 由bookmark-processor.js生成于 2025-11-16T05:54:31.291Z
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
@@ -2177,3 +2177,56 @@ categories:
             url: chrome://bookmarks/
             icon: fas fa-link
             description: ""
+      - name: 其他收藏夹
+        icon: fas fa-folder
+        path:
+          - ""
+          - 其他收藏夹
+        groups:
+          - name: 2025/11/15 15:47:55
+            icon: fas fa-folder
+            path:
+              - ""
+              - 其他收藏夹
+              - 2025/11/15 15:47:55
+            sites:
+              - name: 收藏夹
+                url: edge://favorites/?id=502
+                icon: fas fa-link
+                description: ""
+              - name: Issues · rbetree/menav
+                url: https://github.com/rbetree/menav/issues?q=is%3Aissue%20state%3Aclosed
+                icon: fab fa-github
+                description: ""
+              - name: 扩展
+                url: edge://extensions/?highlight=epcdbodenmgkmkcimelediefohefachh
+                icon: fas fa-link
+                description: ""
+              - name: 辰星书签
+                url: https://sq.ll.sd/
+                icon: fas fa-link
+                description: ""
+              - name: Google Gemini
+                url: https://gemini.google.com/app/78406af70889919a?pli=1
+                icon: fab fa-google
+                description: ""
+              - name: 小舒同学 - Google 搜索
+                url: https://www.google.com.hk/search?q=%E5%B0%8F%E8%88%92%E5%90%8C%E5%AD%A6&amp;newwindow=1&amp;sca_esv=c44c4d982dff0690&amp;sxsrf=AE3TifOV2PRKLh-JUxsD6BsgLVw408oeqA%3A1763192572110&amp;ei=_C4Yae28Bp3n2roP7p-wkQM&amp;ved=0ahUKEwjtqrmX1POQAxWds1YBHe4PLDIQ4dUDCBE&amp;uact=5&amp;oq=%E5%B0%8F%E8%88%92%E5%90%8C%E5%AD%A6&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiDOWwj-iIkuWQjOWtpkjTNlCwCViJNHAFeAGQAQCYAbECoAH-FqoBCDAuMTguMS4xuAEDyAEA-AEBmAIUoAKrFMICChAAGLADGNYEGEfCAgQQIxgnwgIFEAAYgATCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIREC4YgAQYsQMY0QMYgwEYxwHCAgoQABiABBhDGIoFwgILEC4YgAQYsQMYgwHCAg4QLhiABBixAxjRAxjHAcICDhAAGIAEGLEDGIMBGIoFwgIKEC4YgAQYQxiKBcICGRAuGIAEGEMYigUYlwUY3AQY3gQY4ATYAQHCAgsQLhiABBjHARivAcICBRAuGIAEwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICCRAAGIAEGAoYDMICBRAAGO8FwgIEEAAYHsICBhAAGAUYHsICCBAAGIAEGKIEwgIaEC4YgAQYxwEYrwEYlwUY3AQY3gQY4ATYAQGYAwCIBgGQBgq6BgYIARABGBSSBwg1LjEzLjEuMaAHsYABsgcIMC4xMy4xLjG4B-QTwgcJMC4xLjkuNy4zyAfZAQ&amp;sclient=gws-wiz-serp
+                icon: fab fa-google
+                description: ""
+              - name: 小舒同学 | 基于收藏夹的标签页，高效收藏夹管理工具
+                url: https://xiaoshuapp.com/
+                icon: fas fa-link
+                description: ""
+              - name: BoTab - Transform bookmarks into new tab pages with one click
+                url: https://botab.net/
+                icon: fas fa-link
+                description: ""
+              - name: 小舒同学 - 基于书签的新标签页 - Microsoft Edge Addons
+                url: https://microsoftedge.microsoft.com/addons/detail/%E5%B0%8F%E8%88%92%E5%90%8C%E5%AD%A6-%E5%9F%BA%E4%BA%8E%E4%B9%A6%E7%AD%BE%E7%9A%84%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/epcdbodenmgkmkcimelediefohefachh
+                icon: fab fa-microsoft
+                description: ""
+              - name: Edge浏览器新建标签页如何更改为指定网址_edge新建标签页网址-CSDN博客
+                url: https://blog.csdn.net/qq_41701723/article/details/134347683
+                icon: fas fa-link
+                description: ""
