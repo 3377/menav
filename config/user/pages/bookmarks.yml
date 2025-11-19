@@ -1,5 +1,5 @@
 # 自动生成的书签配置文件
-# 由bookmark-processor.js生成于 2025-11-16T05:54:31.291Z
+# 由bookmark-processor.js生成于 2025-11-19T06:16:26.797Z
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
@@ -1595,6 +1595,10 @@ categories:
                 description: ""
               - name: AdGuard Home
                 url: http://10.1.1.250:3000/
+                icon: fas fa-link
+                description: ""
+              - name: 5G CPE 5
+                url: https://hwcpe.ll.sd/#/developermode
                 icon: fas fa-link
                 description: ""
           - name: 免费资源折腾
