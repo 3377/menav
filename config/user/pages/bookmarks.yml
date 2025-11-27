@@ -1,5 +1,5 @@
 # 自动生成的书签配置文件
-# 由bookmark-processor.js生成于 2025-11-26T03:36:59.059Z
+# 由bookmark-processor.js生成于 2025-11-27T10:02:41.546Z
 # 若要更新，请将新的书签HTML文件放入bookmarks/目录
 # 此文件使用模块化配置格式，位于config/user/pages/目录下
 
@@ -2068,6 +2068,10 @@ categories:
               - name: https://chat.opao.xyz
                 url: https://chat.opao.xyz/
                 icon: fas fa-link
+                description: ""
+              - name: 智能体库 - Gemini Enterprise
+                url: https://business.gemini.google/home/cid/46b194ae-dd60-4026-8531-89e9c456d378/r/agent-builder/?loginHint=fyhstz%40gmail.com&amp;csesidx=1824240041
+                icon: fas fa-envelope
                 description: ""
           - name: 常用导航
             icon: fas fa-folder
