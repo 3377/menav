@@ -2,11 +2,11 @@
 # 建议复制到 config/user/site.yml 并按需调整；用户配置采用“完全替换”策略，将覆盖默认配置。
 
 # 网站基本信息
-title: MeNav
-description: Personal Navigation Station
-author: rbetree
+title: 辰星书签
+description: 辰星的在线书签
+author: 辰星
 favicon: menav.svg
-logo_text: MeNav
+logo_text: drfy
 
 icons:
   # 站点卡片图标模式：
@@ -32,16 +32,16 @@ fonts:
     
 # 个人资料：显示在首页顶部的欢迎信息
 profile:
-  title: Hello,
-  subtitle: Welcome to My Navigation
+  title: 欢迎访问,
+  subtitle: 辰星在线书签
 
 # 社交媒体链接：显示在侧边栏底部；可按需增删
 social:
   - name: GitHub
-    url: https://github.com
+    url: https://github.com/3377
     icon: fab fa-github
   - name: Telegram
-    url: https://t.me
+    url: https://t.me/drfyup
     icon: fab fa-telegram
   - name: Twitter
     url: https://twitter.com
@@ -52,9 +52,9 @@ social:
 
 # 导航配置
 navigation:
-  - name: 首页        # 菜单名称
+  - name: 辰星书签        # 菜单名称
     icon: fas fa-home  # Font Awesome 图标类
-    id: home           # 页面标识符（唯一，需与 pages/home.yml 对应）
+    id: bookmarks           # 页面标识符（唯一，需与 pages/home.yml 对应）
     active: true       # 是否默认激活（全局仅一个 true）
   - name: 项目
     icon: fas fa-project-diagram
@@ -65,9 +65,9 @@ navigation:
   - name: 朋友
     icon: fas fa-users
     id: friends
-  - name: 书签
+  - name: 其他 #原首页
     icon: fas fa-bookmark
-    id: bookmarks
+    id:  home
   - name: 书签(多层级)
     icon: fas fa-bookmark
     id: bookmarks-four-level
