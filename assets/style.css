@@ -2348,8 +2348,8 @@ body .content.expanded {
 
 /* 子菜单展开状态 */
 .nav-item-wrapper.expanded .submenu {
-    max-height: 300px; /* 设置合理的最大高度 */
-    overflow-y: scroll; /* 改为scroll确保始终能滚动 */
+    max-height: none; /* 自适应高度，完整展示内容 */
+    overflow: visible;
     opacity: 1;
     visibility: visible;
     scrollbar-width: none; /* Firefox隐藏滚动条 */
@@ -2439,11 +2439,9 @@ body .content.expanded {
    当用户悬停在导航项上时，显示子菜单，并确保其位置正确
    使用绝对定位确保子菜单相对于侧边栏定位，避免在不同滚动位置出现问题 */
 .sidebar.collapsed .nav-item-wrapper:hover .submenu {
-    max-height: 300px;
-    overflow-y: scroll;
+    max-height: none;
+    overflow: visible;
     opacity: 1;
-    visibility: visible;
-    scrollbar-width: none;
     pointer-events: auto;
     display: block;
     left: var(--sidebar-collapsed-width); /* 确保与侧边栏宽度一致 */
