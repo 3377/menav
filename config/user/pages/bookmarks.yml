@@ -5,15 +5,6 @@
 title: 我的书签
 subtitle: 从浏览器导入的书签收藏
 categories:
-  - name: 根目录书签
-    icon: fas fa-star
-    path:
-      - 根目录书签
-    sites:
-      - name: 书签集
-        url: chrome://bookmarks/
-        icon: fas fa-link
-        description: ""
   - name: 常用导航
     icon: fas fa-folder
     path:
@@ -23,9 +14,25 @@ categories:
         url: https://www.google.com.hk/
         icon: fab fa-google
         description: ""
+      - name: GitHub
+        url: https://github.com/
+        icon: fab fa-github
+        description: ""
       - name: Gemini
         url: https://gemini.google.com/app?pli=1
         icon: fab fa-google
+        description: ""
+      - name: 辰星探针
+        url: https://tz.ggaa.eu.org/
+        icon: fas fa-link
+        description: ""
+      - name: NiuLink - 节点管理
+        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=10&amp;owner=self&amp;sortKey=bind&amp;sortType=desc
+        icon: fas fa-link
+        description: ""
+      - name: 超哥家里云爱快-系统概况
+        url: http://10.1.1.1:3579/#/system-overview
+        icon: fas fa-link
         description: ""
       - name: 飞牛Nas
         url: http://10.1.1.66:5666/
@@ -55,10 +62,6 @@ categories:
         url: https://drfy-1.hf.space/
         icon: fas fa-link
         description: ""
-      - name: 辰星鸡场
-        url: https://tz.ggaa.eu.org/
-        icon: fas fa-link
-        description: ""
       - name: Oracle MyLearn
         url: https://mylearn.oracle.com/ou/learning-path/become-a-mysql-80-database-admin-professional/97589
         icon: fas fa-link
@@ -83,10 +86,6 @@ categories:
         url: https://net.ljxnet.cn/
         icon: fas fa-link
         description: ""
-      - name: Drfy-Navi
-        url: https://llll.app.tc/
-        icon: fas fa-link
-        description: ""
       - name: 双不限·神卡大全
         url: https://www.kdocs.cn/l/chpsCfPYI7tg?R=L1MvMTA=
         icon: fas fa-link
@@ -99,16 +98,8 @@ categories:
         url: https://www.userscript.zone/
         icon: fas fa-link
         description: ""
-      - name: NiuLink - 节点管理
-        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=10&amp;owner=self&amp;sortKey=bind&amp;sortType=desc
-        icon: fas fa-link
-        description: ""
       - name: 布局拼图 &amp; 长图拼接 - 免费在线拼图工具
         url: https://img.ops-coffee.com/photo/
-        icon: fas fa-link
-        description: ""
-      - name: 超哥家里云爱快-系统概况
-        url: http://10.1.1.1:3579/#/system-overview
         icon: fas fa-link
         description: ""
       - name: 253-ESXi
@@ -124,6 +115,10 @@ categories:
     path:
       - 个人
     sites:
+      - name: 书签集
+        url: chrome://bookmarks/
+        icon: fas fa-link
+        description: ""
       - name: 一线运维各场景监控详解（2022最新汇总）
         url: https://mp.weixin.qq.com/s/YcfU_RTXtQQx_3JQ8puc7A
         icon: fas fa-link
