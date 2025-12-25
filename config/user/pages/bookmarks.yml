@@ -196,6 +196,254 @@ categories:
         url: https://bbbb.grafana.net/goto/WJ6w7UNHg?orgId=1
         icon: fas fa-link
         description: ""
+  - name: AI相关
+    icon: fas fa-folder
+    path:
+      - AI相关
+    subcategories:
+      - name: 免费在线使用
+        icon: fas fa-folder
+        path:
+          - AI相关
+          - 免费在线使用
+        sites:
+          - name: Aurora.ai - 看更大的世界
+            url: https://aurorai.cn/chat/#/
+            icon: fas fa-link
+            description: ""
+          - name: 茶台AI
+            url: https://www.chatai.ee/chat
+            icon: fas fa-link
+            description: ""
+          - name: Perplexity
+            url: https://www.perplexity.ai/
+            icon: fas fa-link
+            description: ""
+          - name: 🤯 随便聊聊 · LobeChat
+            url: https://chat.1app.site/chat?session=inbox&amp;topic=O0a9EPD6
+            icon: fas fa-link
+            description: ""
+          - name: llama205模型
+            url: https://huggingface.co/chat/conversation/66beeda9957b2310751435ad
+            icon: fas fa-link
+            description: ""
+          - name: Llama Coder – AI Code Generator
+            url: https://llamacoder.together.ai/
+            icon: fas fa-link
+            description: ""
+          - name: 聊天仪表盘
+            url: https://aichatru.ru/zh-CN/app
+            icon: fas fa-link
+            description: ""
+          - name: 潺潺流水小桥家 | ChatK
+            url: https://chat2.oaichat.cc/c/e84a73f3-1763-45bb-90ff-acf7ecaa1478
+            icon: fas fa-link
+            description: ""
+          - name: API CHECKER
+            url: https://api-checker.kici.me/
+            icon: fas fa-link
+            description: ""
+          - name: 多模型对比AI
+            url: https://chat.notdiamond.ai/
+            icon: fas fa-link
+            description: ""
+          - name: OpenGPT 4o - a Hugging Face Space by KingNish
+            url: https://huggingface.co/spaces/KingNish/OpenGPT-4o
+            icon: fas fa-link
+            description: ""
+          - name: 200K claude
+            url: https://hermchats.com/chat
+            icon: fas fa-link
+            description: ""
+          - name: 始皇的ChatGPT
+            url: https://shared.oaifree.com/?temporary-chat=true
+            icon: fas fa-link
+            description: ""
+          - name: ChatGPT VV佬
+            url: https://plus.aivvm.com/auth/login_share?token=fk-ew6cEsD0Chd-oUq_RPeTQ-jbkSQWDTzXk_AiBbtOODI
+            icon: fas fa-link
+            description: ""
+          - name: Shopping Cart - Itex Integrated Ventures
+            url: https://customer.itexint.com/cart.php?a=view
+            icon: fas fa-link
+            description: ""
+          - name: 生成代码AI Artifacts by E2B
+            url: https://artifacts.e2b.dev/
+            icon: fas fa-link
+            description: ""
+          - name: 设计 - Canva可画
+            url: https://www.canva.com/design/DAGQ0A6eIHs/GveUuyCC36T62sUCQQ4OHA/edit
+            icon: fas fa-link
+            description: ""
+          - name: 互联网常用资源聚合
+            url: https://free-for.dev/#/?id=managed-data-services
+            icon: fas fa-link
+            description: ""
+          - name: OiChat (Open WebUI)
+            url: https://happyapi.org/
+            icon: fas fa-link
+            description: ""
+          - name: 🐕 Drawing a Puppy | Open WebUI
+            url: https://chat.yingmiwo.me/c/486a42c3-b794-43c9-9177-701b8efa2ac7
+            icon: fas fa-link
+            description: ""
+          - name: My drive
+            url: https://app.giz.ai/folders/mySpace
+            icon: fas fa-link
+            description: ""
+          - name: 360AI助手
+            url: https://bot.360.com/cooperation
+            icon: fas fa-link
+            description: ""
+          - name: 在线AI抠图
+            url: https://text2img.vip/dashboard/playground/remove-bg
+            icon: fas fa-link
+            description: ""
+          - name: Arya - 在线 Markdown 编辑器
+            url: https://markdown.lovejade.cn/
+            icon: fas fa-link
+            description: ""
+          - name: 小狐狸的智慧 | Qwen
+            url: https://chat.qwenlm.ai/c/d54c4da9-6756-4f75-829d-3f5397ca97b8
+            icon: fas fa-link
+            description: ""
+          - name: (19) Grok / X
+            url: https://x.com/i/grok?conversation=1892509297747329239
+            icon: fas fa-link
+            description: ""
+          - name: AI画图表
+            url: https://vdraw.ai/ai-infographic-generator
+            icon: fas fa-link
+            description: ""
+          - name: Ask AI
+            url: https://iask.ai/?mode=pro
+            icon: fas fa-link
+            description: ""
+          - name: MD2Card - Markdown 转知识卡片工具
+            url: https://md2card.com/zh
+            icon: fas fa-link
+            description: ""
+          - name: 精选299套个人简历模板【免费下载|word可编辑】- 精品简历模板网
+            url: https://www.51386.com/
+            icon: fas fa-link
+            description: ""
+          - name: 谷歌免费空间 - Firebase Studio
+            url: https://studio.firebase.google.com/njhcxb-04465544
+            icon: fab fa-google
+            description: ""
+      - name: 免费API
+        icon: fas fa-folder
+        path:
+          - AI相关
+          - 免费API
+        sites:
+          - name: MAX API
+            url: https://api.7xnn.cn/token
+            icon: fas fa-link
+            description: ""
+          - name: One API
+            url: https://api.dragonvirt.com/
+            icon: fas fa-link
+            description: ""
+          - name: NAI API
+            url: https://nai.typegpt.net/midjourney
+            icon: fas fa-link
+            description: ""
+      - name: AI文档PPT
+        icon: fas fa-folder
+        path:
+          - AI相关
+          - AI文档PPT
+        sites:
+          - name: 运维经理年中总结 - Napkin AI
+            url: https://app.napkin.ai/page/CgoiCHByb2Qtb25lEiwKBFBhZ2UaJDg2ODI5MDgxLWY5YzMtNDlkOC1iM2UxLWJkMmRkMGJjZTExOQ
+            icon: fas fa-link
+            description: ""
+    sites:
+      - name: free-llm-api-resources | A list of free LLM inference resources accessible via API.
+        url: https://jscheah.me/free-llm-api-resources/
+        icon: fas fa-link
+        description: ""
+      - name: AI知识库
+        url: https://agijuejin.feishu.cn/wiki/IaMEwtLr0iEqPzkkGikcJPcgnpc
+        icon: fas fa-link
+        description: ""
+      - name: Genspark - 古风武侠美女图像生成任务
+        url: https://www.genspark.ai/agents?id=d798c059-1a49-4927-8a49-ada3b09d669d
+        icon: fas fa-link
+        description: ""
+      - name: freeapi-公益
+        url: https://freeapi.aiiz.cc/token
+        icon: fas fa-link
+        description: ""
+      - name: 数据库-openwebui | 3377&#039;s Org | Supabase
+        url: https://supabase.com/dashboard/project/gwzektrldrpxrckzdbec
+        icon: fas fa-link
+        description: ""
+      - name: 免费数据库 | drfy | Aiven
+        url: https://console.aiven.io/account/a4d3451791e3/project/fyai/services/drfy/overview
+        icon: fas fa-link
+        description: ""
+      - name: API.66D.EU
+        url: https://api.66d.eu/panel/profile
+        icon: fas fa-link
+        description: ""
+      - name: 免费ChatGPT1
+        url: https://free.netfly.top/
+        icon: fas fa-link
+        description: ""
+      - name: Chat Nio
+        url: http://soul.ggaa.eu.org:8000/admin/channel
+        icon: fas fa-link
+        description: ""
+      - name: g4f - gui
+        url: http://soul.ggaa.eu.org:5050/chat/
+        icon: fas fa-link
+        description: ""
+      - name: 本地部署 Llama3.1 最强开源大模型！支持 Windows、MacOS – 零度解说
+        url: https://www.freedidi.com/13105.html
+        icon: fas fa-link
+        description: ""
+      - name: "[小白的教程]无需服务器一键部署OneAPI? | OneAPI 部署使用指南。 - 这里是一切开始的地方"
+        url: https://www.laogou666.com/posts/AGI/OneAPI
+        icon: fas fa-link
+        description: ""
+      - name: 手把手教你构建一个 本地化的，免费的，企业级的，AI大模型知识库问答系统 - 网旭哈瑞.AI
+        url: https://harryai.cc/post/enterprise-knowledge-llm-qa/
+        icon: fas fa-link
+        description: ""
+      - name: 信用卡生成
+        url: https://checker.top/
+        icon: fas fa-link
+        description: ""
+      - name: 信用卡生产2
+        url: https://cardguru.io/bulk-credit-card-generator
+        icon: fas fa-link
+        description: ""
+      - name: shenzhi-wang/Llama3.1-8B-Chinese-Chat at main
+        url: https://huggingface.co/shenzhi-wang/Llama3.1-8B-Chinese-Chat/tree/main/gguf
+        icon: fas fa-link
+        description: ""
+      - name: 模型和价格说明 - 智增增API
+        url: https://doc.zhizengzeng.com/doc-3979947
+        icon: fas fa-link
+        description: ""
+      - name: AI相关API白嫖和成本评估综合表 - Lark云文档
+        url: https://skyit-uk.jp.larksuite.com/sheets/MOk5scBxHhGjDjtumhMjfwEUpYg?sheet=NxkNQy
+        icon: fas fa-link
+        description: ""
+      - name: drfy88_gcp - 报告 - 结算
+        url: https://console.cloud.google.com/billing/01EA17-2E75FF-C2E607/reports;chartType=STACKED_AREA;grouping=GROUP_BY_SKU;chartCostView=CUMULATIVE?project=innate-summit-424812-b0
+        icon: fab fa-google
+        description: ""
+      - name: https://chat.opao.xyz
+        url: https://chat.opao.xyz/
+        icon: fas fa-link
+        description: ""
+      - name: Google AI Studio-API详情
+        url: https://aistudio.google.com/u/5/usage?project=gen-lang-client-0727000128&amp;tab=rate-limit&amp;timeRange=last-28-days
+        icon: fab fa-google
+        description: ""
   - name: 工具类
     icon: fas fa-folder
     path:
@@ -290,51 +538,6 @@ categories:
         description: ""
       - name: AI生成PPT
         url: https://www.beautiful.ai/
-        icon: fas fa-link
-        description: ""
-  - name: 有意思的
-    icon: fas fa-folder
-    path:
-      - 有意思的
-    sites:
-      - name: 紫菱917. - 秀场
-        url: http://x.kuwo.cn/54917
-        icon: fas fa-link
-        description: ""
-      - name: 小众软件
-        url: http://www.appinn.com/
-        icon: fas fa-link
-        description: ""
-      - name: 面试经历-two - 日行一善的博客
-        url: https://www.52wiki.cn/Doc/Read/id/58.html
-        icon: fas fa-link
-        description: ""
-      - name: xyplorer的‘完美’设置 - 简书
-        url: https://www.jianshu.com/p/c0249f8d7593
-        icon: fas fa-link
-        description: ""
-      - name: 公章专家_公司电子印章图片生成器_印章在线制作大师
-        url: http://seal.ssjjss.com/?chara=%E5%AE%81%E6%B3%A2%E8%81%9A%E5%85%83%E8%B4%A2%E5%AF%8C%E6%8A%95%E8%B5%84%E7%AE%A1%E7%90%86%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&amp;fonta=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizea=24&amp;fontheighta=155&amp;charspacinga=8&amp;paddinga=3&amp;charb=&amp;number=0&amp;fontb=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizeb=20&amp;fontheightb=155&amp;charspacingb=1&amp;paddingb=113&amp;charc=3302120236750&amp;fontc=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizec=14&amp;fontheightc=100&amp;charspacingc=10&amp;paddingc=3&amp;borderwidth=8&amp;size=160&amp;rotation=0&amp;forecolor=%23E62828&amp;sign=star&amp;signscale=100&amp;forealpha=100&amp;effect=0
-        icon: fas fa-link
-        description: ""
-      - name: 绿盟章
-        url: http://seal.ssjjss.com/?chara=%E5%8C%97%E4%BA%AC%E7%A5%9E%E5%B7%9E%E7%BB%BF%E7%9B%9F%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&amp;fonta=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizea=24&amp;fontheighta=155&amp;charspacinga=8&amp;paddinga=3&amp;charb=&amp;number=0&amp;fontb=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizeb=20&amp;fontheightb=155&amp;charspacingb=1&amp;paddingb=113&amp;charc=1101080110381&amp;fontc=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizec=14&amp;fontheightc=100&amp;charspacingc=10&amp;paddingc=3&amp;borderwidth=8&amp;size=160&amp;rotation=0&amp;forecolor=%23E62828&amp;sign=star&amp;signscale=100&amp;forealpha=100&amp;effect=0
-        icon: fas fa-link
-        description: ""
-      - name: Powerful Workflow Automation Software &amp; Tools - n…
-        url: https://n8n.io/
-        icon: fas fa-link
-        description: ""
-      - name: 在线环境学习
-        url: https://killercoda.com/
-        icon: fas fa-link
-        description: ""
-      - name: 最佳 BrowserScan 指纹检测工具 - 提高您的在线隐私安全 | BrowserScan
-        url: https://www.browserscan.net/zh
-        icon: fas fa-link
-        description: ""
-      - name: Tcoo.cc -自托管推荐
-        url: https://tcoo.cc/en
         icon: fas fa-link
         description: ""
   - name: 资源类
@@ -833,6 +1036,51 @@ categories:
         description: ""
       - name: 115网盘资源分享
         url: https://docs.qq.com/sheet/DYUNKVU1RWm9ZVXVm?tab=vr7wif
+        icon: fas fa-link
+        description: ""
+  - name: 有意思的
+    icon: fas fa-folder
+    path:
+      - 有意思的
+    sites:
+      - name: 紫菱917. - 秀场
+        url: http://x.kuwo.cn/54917
+        icon: fas fa-link
+        description: ""
+      - name: 小众软件
+        url: http://www.appinn.com/
+        icon: fas fa-link
+        description: ""
+      - name: 面试经历-two - 日行一善的博客
+        url: https://www.52wiki.cn/Doc/Read/id/58.html
+        icon: fas fa-link
+        description: ""
+      - name: xyplorer的‘完美’设置 - 简书
+        url: https://www.jianshu.com/p/c0249f8d7593
+        icon: fas fa-link
+        description: ""
+      - name: 公章专家_公司电子印章图片生成器_印章在线制作大师
+        url: http://seal.ssjjss.com/?chara=%E5%AE%81%E6%B3%A2%E8%81%9A%E5%85%83%E8%B4%A2%E5%AF%8C%E6%8A%95%E8%B5%84%E7%AE%A1%E7%90%86%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&amp;fonta=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizea=24&amp;fontheighta=155&amp;charspacinga=8&amp;paddinga=3&amp;charb=&amp;number=0&amp;fontb=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizeb=20&amp;fontheightb=155&amp;charspacingb=1&amp;paddingb=113&amp;charc=3302120236750&amp;fontc=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizec=14&amp;fontheightc=100&amp;charspacingc=10&amp;paddingc=3&amp;borderwidth=8&amp;size=160&amp;rotation=0&amp;forecolor=%23E62828&amp;sign=star&amp;signscale=100&amp;forealpha=100&amp;effect=0
+        icon: fas fa-link
+        description: ""
+      - name: 绿盟章
+        url: http://seal.ssjjss.com/?chara=%E5%8C%97%E4%BA%AC%E7%A5%9E%E5%B7%9E%E7%BB%BF%E7%9B%9F%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&amp;fonta=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizea=24&amp;fontheighta=155&amp;charspacinga=8&amp;paddinga=3&amp;charb=&amp;number=0&amp;fontb=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizeb=20&amp;fontheightb=155&amp;charspacingb=1&amp;paddingb=113&amp;charc=1101080110381&amp;fontc=%E9%95%BF%E5%9F%8E%E5%A4%A7%E6%A0%87%E5%AE%8B%E4%BD%93&amp;fontsizec=14&amp;fontheightc=100&amp;charspacingc=10&amp;paddingc=3&amp;borderwidth=8&amp;size=160&amp;rotation=0&amp;forecolor=%23E62828&amp;sign=star&amp;signscale=100&amp;forealpha=100&amp;effect=0
+        icon: fas fa-link
+        description: ""
+      - name: Powerful Workflow Automation Software &amp; Tools - n…
+        url: https://n8n.io/
+        icon: fas fa-link
+        description: ""
+      - name: 在线环境学习
+        url: https://killercoda.com/
+        icon: fas fa-link
+        description: ""
+      - name: 最佳 BrowserScan 指纹检测工具 - 提高您的在线隐私安全 | BrowserScan
+        url: https://www.browserscan.net/zh
+        icon: fas fa-link
+        description: ""
+      - name: Tcoo.cc -自托管推荐
+        url: https://tcoo.cc/en
         icon: fas fa-link
         description: ""
   - name: 各类教程
@@ -1937,252 +2185,4 @@ categories:
       - name: 信用卡生成测活
         url: https://chkr.cc/
         icon: fas fa-link
-        description: ""
-  - name: AI相关
-    icon: fas fa-folder
-    path:
-      - AI相关
-    subcategories:
-      - name: 免费在线使用
-        icon: fas fa-folder
-        path:
-          - AI相关
-          - 免费在线使用
-        sites:
-          - name: Aurora.ai - 看更大的世界
-            url: https://aurorai.cn/chat/#/
-            icon: fas fa-link
-            description: ""
-          - name: 茶台AI
-            url: https://www.chatai.ee/chat
-            icon: fas fa-link
-            description: ""
-          - name: Perplexity
-            url: https://www.perplexity.ai/
-            icon: fas fa-link
-            description: ""
-          - name: 🤯 随便聊聊 · LobeChat
-            url: https://chat.1app.site/chat?session=inbox&amp;topic=O0a9EPD6
-            icon: fas fa-link
-            description: ""
-          - name: llama205模型
-            url: https://huggingface.co/chat/conversation/66beeda9957b2310751435ad
-            icon: fas fa-link
-            description: ""
-          - name: Llama Coder – AI Code Generator
-            url: https://llamacoder.together.ai/
-            icon: fas fa-link
-            description: ""
-          - name: 聊天仪表盘
-            url: https://aichatru.ru/zh-CN/app
-            icon: fas fa-link
-            description: ""
-          - name: 潺潺流水小桥家 | ChatK
-            url: https://chat2.oaichat.cc/c/e84a73f3-1763-45bb-90ff-acf7ecaa1478
-            icon: fas fa-link
-            description: ""
-          - name: API CHECKER
-            url: https://api-checker.kici.me/
-            icon: fas fa-link
-            description: ""
-          - name: 多模型对比AI
-            url: https://chat.notdiamond.ai/
-            icon: fas fa-link
-            description: ""
-          - name: OpenGPT 4o - a Hugging Face Space by KingNish
-            url: https://huggingface.co/spaces/KingNish/OpenGPT-4o
-            icon: fas fa-link
-            description: ""
-          - name: 200K claude
-            url: https://hermchats.com/chat
-            icon: fas fa-link
-            description: ""
-          - name: 始皇的ChatGPT
-            url: https://shared.oaifree.com/?temporary-chat=true
-            icon: fas fa-link
-            description: ""
-          - name: ChatGPT VV佬
-            url: https://plus.aivvm.com/auth/login_share?token=fk-ew6cEsD0Chd-oUq_RPeTQ-jbkSQWDTzXk_AiBbtOODI
-            icon: fas fa-link
-            description: ""
-          - name: Shopping Cart - Itex Integrated Ventures
-            url: https://customer.itexint.com/cart.php?a=view
-            icon: fas fa-link
-            description: ""
-          - name: 生成代码AI Artifacts by E2B
-            url: https://artifacts.e2b.dev/
-            icon: fas fa-link
-            description: ""
-          - name: 设计 - Canva可画
-            url: https://www.canva.com/design/DAGQ0A6eIHs/GveUuyCC36T62sUCQQ4OHA/edit
-            icon: fas fa-link
-            description: ""
-          - name: 互联网常用资源聚合
-            url: https://free-for.dev/#/?id=managed-data-services
-            icon: fas fa-link
-            description: ""
-          - name: OiChat (Open WebUI)
-            url: https://happyapi.org/
-            icon: fas fa-link
-            description: ""
-          - name: 🐕 Drawing a Puppy | Open WebUI
-            url: https://chat.yingmiwo.me/c/486a42c3-b794-43c9-9177-701b8efa2ac7
-            icon: fas fa-link
-            description: ""
-          - name: My drive
-            url: https://app.giz.ai/folders/mySpace
-            icon: fas fa-link
-            description: ""
-          - name: 360AI助手
-            url: https://bot.360.com/cooperation
-            icon: fas fa-link
-            description: ""
-          - name: 在线AI抠图
-            url: https://text2img.vip/dashboard/playground/remove-bg
-            icon: fas fa-link
-            description: ""
-          - name: Arya - 在线 Markdown 编辑器
-            url: https://markdown.lovejade.cn/
-            icon: fas fa-link
-            description: ""
-          - name: 小狐狸的智慧 | Qwen
-            url: https://chat.qwenlm.ai/c/d54c4da9-6756-4f75-829d-3f5397ca97b8
-            icon: fas fa-link
-            description: ""
-          - name: (19) Grok / X
-            url: https://x.com/i/grok?conversation=1892509297747329239
-            icon: fas fa-link
-            description: ""
-          - name: AI画图表
-            url: https://vdraw.ai/ai-infographic-generator
-            icon: fas fa-link
-            description: ""
-          - name: Ask AI
-            url: https://iask.ai/?mode=pro
-            icon: fas fa-link
-            description: ""
-          - name: MD2Card - Markdown 转知识卡片工具
-            url: https://md2card.com/zh
-            icon: fas fa-link
-            description: ""
-          - name: 精选299套个人简历模板【免费下载|word可编辑】- 精品简历模板网
-            url: https://www.51386.com/
-            icon: fas fa-link
-            description: ""
-          - name: 谷歌免费空间 - Firebase Studio
-            url: https://studio.firebase.google.com/njhcxb-04465544
-            icon: fab fa-google
-            description: ""
-      - name: 免费API
-        icon: fas fa-folder
-        path:
-          - AI相关
-          - 免费API
-        sites:
-          - name: MAX API
-            url: https://api.7xnn.cn/token
-            icon: fas fa-link
-            description: ""
-          - name: One API
-            url: https://api.dragonvirt.com/
-            icon: fas fa-link
-            description: ""
-          - name: NAI API
-            url: https://nai.typegpt.net/midjourney
-            icon: fas fa-link
-            description: ""
-      - name: AI文档PPT
-        icon: fas fa-folder
-        path:
-          - AI相关
-          - AI文档PPT
-        sites:
-          - name: 运维经理年中总结 - Napkin AI
-            url: https://app.napkin.ai/page/CgoiCHByb2Qtb25lEiwKBFBhZ2UaJDg2ODI5MDgxLWY5YzMtNDlkOC1iM2UxLWJkMmRkMGJjZTExOQ
-            icon: fas fa-link
-            description: ""
-    sites:
-      - name: free-llm-api-resources | A list of free LLM inference resources accessible via API.
-        url: https://jscheah.me/free-llm-api-resources/
-        icon: fas fa-link
-        description: ""
-      - name: AI知识库
-        url: https://agijuejin.feishu.cn/wiki/IaMEwtLr0iEqPzkkGikcJPcgnpc
-        icon: fas fa-link
-        description: ""
-      - name: Genspark - 古风武侠美女图像生成任务
-        url: https://www.genspark.ai/agents?id=d798c059-1a49-4927-8a49-ada3b09d669d
-        icon: fas fa-link
-        description: ""
-      - name: freeapi-公益
-        url: https://freeapi.aiiz.cc/token
-        icon: fas fa-link
-        description: ""
-      - name: 数据库-openwebui | 3377&#039;s Org | Supabase
-        url: https://supabase.com/dashboard/project/gwzektrldrpxrckzdbec
-        icon: fas fa-link
-        description: ""
-      - name: 免费数据库 | drfy | Aiven
-        url: https://console.aiven.io/account/a4d3451791e3/project/fyai/services/drfy/overview
-        icon: fas fa-link
-        description: ""
-      - name: API.66D.EU
-        url: https://api.66d.eu/panel/profile
-        icon: fas fa-link
-        description: ""
-      - name: 免费ChatGPT1
-        url: https://free.netfly.top/
-        icon: fas fa-link
-        description: ""
-      - name: Chat Nio
-        url: http://soul.ggaa.eu.org:8000/admin/channel
-        icon: fas fa-link
-        description: ""
-      - name: g4f - gui
-        url: http://soul.ggaa.eu.org:5050/chat/
-        icon: fas fa-link
-        description: ""
-      - name: 本地部署 Llama3.1 最强开源大模型！支持 Windows、MacOS – 零度解说
-        url: https://www.freedidi.com/13105.html
-        icon: fas fa-link
-        description: ""
-      - name: "[小白的教程]无需服务器一键部署OneAPI? | OneAPI 部署使用指南。 - 这里是一切开始的地方"
-        url: https://www.laogou666.com/posts/AGI/OneAPI
-        icon: fas fa-link
-        description: ""
-      - name: 手把手教你构建一个 本地化的，免费的，企业级的，AI大模型知识库问答系统 - 网旭哈瑞.AI
-        url: https://harryai.cc/post/enterprise-knowledge-llm-qa/
-        icon: fas fa-link
-        description: ""
-      - name: 信用卡生成
-        url: https://checker.top/
-        icon: fas fa-link
-        description: ""
-      - name: 信用卡生产2
-        url: https://cardguru.io/bulk-credit-card-generator
-        icon: fas fa-link
-        description: ""
-      - name: shenzhi-wang/Llama3.1-8B-Chinese-Chat at main
-        url: https://huggingface.co/shenzhi-wang/Llama3.1-8B-Chinese-Chat/tree/main/gguf
-        icon: fas fa-link
-        description: ""
-      - name: 模型和价格说明 - 智增增API
-        url: https://doc.zhizengzeng.com/doc-3979947
-        icon: fas fa-link
-        description: ""
-      - name: AI相关API白嫖和成本评估综合表 - Lark云文档
-        url: https://skyit-uk.jp.larksuite.com/sheets/MOk5scBxHhGjDjtumhMjfwEUpYg?sheet=NxkNQy
-        icon: fas fa-link
-        description: ""
-      - name: drfy88_gcp - 报告 - 结算
-        url: https://console.cloud.google.com/billing/01EA17-2E75FF-C2E607/reports;chartType=STACKED_AREA;grouping=GROUP_BY_SKU;chartCostView=CUMULATIVE?project=innate-summit-424812-b0
-        icon: fab fa-google
-        description: ""
-      - name: https://chat.opao.xyz
-        url: https://chat.opao.xyz/
-        icon: fas fa-link
-        description: ""
-      - name: Google AI Studio-API详情
-        url: https://aistudio.google.com/u/5/usage?project=gen-lang-client-0727000128&amp;tab=rate-limit&amp;timeRange=last-28-days
-        icon: fab fa-google
         description: ""
