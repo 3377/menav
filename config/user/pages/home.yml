@@ -4,7 +4,7 @@ title: 欢迎使用        # 页面标题
 subtitle: 个人导航站点  # 页面副标题
 
 # 指定使用的模板文件名，现有页面模板可见 templates/pages（不含 .hbs）
-template: home
+template: bookmarks
 
 # 页面分类与站点列表（可按需增删顺序）
 categories:
