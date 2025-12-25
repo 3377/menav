@@ -30,6 +30,10 @@ categories:
         url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=10&amp;owner=self&amp;sortKey=bind&amp;sortType=desc
         icon: fas fa-link
         description: ""
+      - name: 辰星影音库
+        url: https://pan.hstz.com/
+        icon: fas fa-link
+        description: ""
       - name: Home Assistant
         url: http://10.1.1.66:8123/lovelace/default_view
         icon: fas fa-link
@@ -141,10 +145,6 @@ categories:
         description: ""
       - name: 5G CPE 5
         url: https://hwcpe.ll.sd/#/developermode
-        icon: fas fa-link
-        description: ""
-      - name: 主页 | 辰星影音库
-        url: https://pan.hstz.com/
         icon: fas fa-link
         description: ""
   - name: 个人
