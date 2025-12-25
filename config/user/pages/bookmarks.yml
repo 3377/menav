@@ -18,6 +18,10 @@ categories:
         url: https://gemini.google.com/app?pli=1
         icon: fab fa-google
         description: ""
+      - name: 辰星探针
+        url: https://tz.ggaa.eu.org/
+        icon: fas fa-link
+        description: ""
       - name: 飞牛Nas
         url: http://10.1.1.66:5666/
         icon: fas fa-link
@@ -46,10 +50,6 @@ categories:
         url: https://drfy-1.hf.space/
         icon: fas fa-link
         description: ""
-      - name: 辰星鸡场
-        url: https://tz.ggaa.eu.org/
-        icon: fas fa-link
-        description: ""
       - name: Oracle MyLearn
         url: https://mylearn.oracle.com/ou/learning-path/become-a-mysql-80-database-admin-professional/97589
         icon: fas fa-link
@@ -72,10 +72,6 @@ categories:
         description: ""
       - name: 运营商测速
         url: https://net.ljxnet.cn/
-        icon: fas fa-link
-        description: ""
-      - name: 辰星探针
-        url: https://tz.ggaa.eu.org/
         icon: fas fa-link
         description: ""
       - name: 双不限·神卡大全
