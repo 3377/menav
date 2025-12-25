@@ -641,7 +641,7 @@ function extractNestedData(element) {
 document.addEventListener('DOMContentLoaded', () => {
     // 先声明所有状态变量
     let isSearchActive = false;
-    let currentPageId = 'home';
+    let currentPageId = 'bookmarks';
     let isInitialLoad = true;
     let isSidebarOpen = false;
     let isSearchOpen = false;
@@ -1256,10 +1256,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             });
                         }
                     } else {
-                        // 如果没有激活的导航项，默认显示首页
-                        currentPageId = 'home';
+                        // 如果没有激活的导航项，默认显示书签页
+                        currentPageId = 'bookmarks';
                         pages.forEach(page => {
-                            page.classList.toggle('active', page.id === 'home');
+                            page.classList.toggle('active', page.id === 'bookmarks');
                         });
                     }
                 } catch (resetError) {
@@ -1488,8 +1488,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 立即执行初始化，不再使用requestAnimationFrame延迟
-        // 显示首页
-        showPage('home');
+        // 显示书签页
+        showPage('bookmarks');
 
         // 添加载入动画
         categories.forEach((category, index) => {
