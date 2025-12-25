@@ -30,14 +30,6 @@ categories:
         url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=10&amp;owner=self&amp;sortKey=bind&amp;sortType=desc
         icon: fas fa-link
         description: ""
-      - name: 超哥家里云爱快-系统概况
-        url: http://10.1.1.1:3579/#/system-overview
-        icon: fas fa-link
-        description: ""
-      - name: 飞牛Nas
-        url: http://10.1.1.66:5666/
-        icon: fas fa-link
-        description: ""
       - name: Home Assistant
         url: http://10.1.1.66:8123/lovelace/default_view
         icon: fas fa-link
@@ -52,10 +44,6 @@ categories:
         description: ""
       - name: CF
         url: https://dash.cloudflare.com/e7f6a487169d1ea0815c6b990ca3e61f/
-        icon: fas fa-link
-        description: ""
-      - name: One Hub
-        url: https://drfy-1.hf.space/
         icon: fas fa-link
         description: ""
       - name: Oracle MyLearn
@@ -103,6 +91,18 @@ categories:
     path:
       - 内网链接
     sites:
+      - name: 253-ESXi
+        url: https://10.1.1.253/ui/#/login
+        icon: fas fa-link
+        description: ""
+      - name: 超哥家里云爱快-系统概况
+        url: http://10.1.1.1:3579/#/system-overview
+        icon: fas fa-link
+        description: ""
+      - name: 飞牛Nas
+        url: http://10.1.1.66:5666/
+        icon: fas fa-link
+        description: ""
       - name: 青龙
         url: http://10.1.1.66:15700/crontab
         icon: fas fa-link
@@ -148,10 +148,6 @@ categories:
     path:
       - 个人
     sites:
-      - name: 253-ESXi
-        url: https://10.1.1.253/ui/#/login
-        icon: fas fa-link
-        description: ""
       - name: 书签集
         url: edge://favorites/
         icon: fas fa-link
