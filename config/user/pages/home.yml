@@ -10,8 +10,6 @@ template: home
 categories:
   - name: 常用导航
     icon: fas fa-folder
-    path:
-      - 常用导航
     sites:
       - name: Google
         url: https://www.google.com.hk/
