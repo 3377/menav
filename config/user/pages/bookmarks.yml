@@ -116,7 +116,7 @@ categories:
       - 个人
     sites:
       - name: 书签集
-        url: chrome://bookmarks/
+        url: edge://favorites/
         icon: fas fa-link
         description: ""
       - name: 一线运维各场景监控详解（2022最新汇总）
