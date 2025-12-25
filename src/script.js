@@ -1377,6 +1377,38 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        function navigateHome(fromKeyboard = false) {
+            const homeNav = Array.from(navItems).find(nav => nav.getAttribute('data-page') === 'home');
+
+            if (homeNav) {
+                navItems.forEach(nav => nav.classList.toggle('active', nav === homeNav));
+            }
+
+            showPage('home');
+
+            if (isMobile() && isSidebarOpen) {
+                closeAllPanels();
+            }
+
+            if (fromKeyboard) {
+                logoTitle && logoTitle.blur();
+            }
+        }
+
+        if (logoTitle) {
+            logoTitle.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateHome();
+            });
+
+            logoTitle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    navigateHome(true);
+                }
+            });
+        }
+
         // 点击页面其他位置关闭下拉菜单
         document.addEventListener('click', () => {
             searchEngineDropdown.classList.remove('active');
@@ -1465,6 +1497,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const navItems = document.querySelectorAll('.nav-item');
         const navItemWrappers = document.querySelectorAll('.nav-item-wrapper');
         const submenuItems = document.querySelectorAll('.submenu-item');
+        const logoTitle = document.querySelector('.logo-title');
         pages = document.querySelectorAll('.page');
 
         // 初始化主题
