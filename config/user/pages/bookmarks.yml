@@ -5,15 +5,6 @@
 title: 我的书签
 subtitle: 从浏览器导入的书签收藏
 categories:
-  - name: 根目录书签
-    icon: fas fa-star
-    path:
-      - 根目录书签
-    sites:
-      - name: 书签集
-        url: chrome://bookmarks/
-        icon: fas fa-link
-        description: ""
   - name: 常用导航
     icon: fas fa-folder
     path:
@@ -83,8 +74,8 @@ categories:
         url: https://net.ljxnet.cn/
         icon: fas fa-link
         description: ""
-      - name: Drfy-Navi
-        url: https://llll.app.tc/
+      - name: 辰星探针
+        url: https://tz.ggaa.eu.org/
         icon: fas fa-link
         description: ""
       - name: 双不限·神卡大全
@@ -124,6 +115,10 @@ categories:
     path:
       - 个人
     sites:
+      - name: 书签集
+        url: chrome://bookmarks/
+        icon: fas fa-link
+        description: ""
       - name: 一线运维各场景监控详解（2022最新汇总）
         url: https://mp.weixin.qq.com/s/YcfU_RTXtQQx_3JQ8puc7A
         icon: fas fa-link
