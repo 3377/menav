@@ -1465,8 +1465,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const navItems = document.querySelectorAll('.nav-item');
         const navItemWrappers = document.querySelectorAll('.nav-item-wrapper');
         const submenuItems = document.querySelectorAll('.submenu-item');
-        const logoBrand = document.querySelector('.logo-brand');
-        const logoTitle = document.querySelector('.logo-title');
         pages = document.querySelectorAll('.page');
 
         // 初始化主题
@@ -1500,79 +1498,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * 100);
         });
 
-        const updateSubmenuState = (wrapper) => {
-            if (!wrapper) return;
-            const submenu = wrapper.querySelector('.submenu');
-            if (!submenu) return;
-
-            if (wrapper.classList.contains('expanded')) {
-                // 使用 requestAnimationFrame 确保 DOM 更新完成后再读取高度
-                requestAnimationFrame(() => {
-                    const height = submenu.scrollHeight;
-                    submenu.style.maxHeight = `${height}px`;
-                });
-            } else {
-                submenu.style.maxHeight = '0px';
-            }
-        };
-
-        const collapseAllOtherSubmenus = (skipWrapper) => {
-            navItemWrappers.forEach(navWrapper => {
-                if (navWrapper !== skipWrapper) {
-                    navWrapper.classList.remove('expanded');
-                    updateSubmenuState(navWrapper);
-                }
-            });
-        };
-
-        const navigateHome = (fromKeyboard = false) => {
-            const homeNav = Array.from(navItems).find(nav => nav.getAttribute('data-page') === 'home');
-
-            if (homeNav) {
-                navItems.forEach(nav => nav.classList.toggle('active', nav === homeNav));
-                const homeWrapper = homeNav.closest('.nav-item-wrapper');
-                if (homeWrapper && homeWrapper.querySelector('.submenu')) {
-                    collapseAllOtherSubmenus(homeWrapper);
-                    homeWrapper.classList.add('expanded');
-                    updateSubmenuState(homeWrapper);
-                } else {
-                    collapseAllOtherSubmenus(null);
-                }
-            }
-
-            showPage('home');
-
-            if (isMobile() && isSidebarOpen) {
-                closeAllPanels();
-            }
-
-            if (fromKeyboard && logoBrand) {
-                logoBrand.blur();
-            }
-        };
-
-        if (logoBrand) {
-            logoBrand.addEventListener('click', (e) => {
-                e.preventDefault();
-                navigateHome();
-            });
-
-            logoBrand.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    navigateHome(true);
-                }
-            });
-        }
-
         // 初始展开当前页面的子菜单：高亮项如果有子菜单，需要同步展开
         document.querySelectorAll('.nav-item.active').forEach(activeItem => {
             const activeWrapper = activeItem.closest('.nav-item-wrapper');
             if (!activeWrapper) return;
 
-            if (activeWrapper.querySelector('.submenu')) {
+            const hasSubmenu = activeWrapper.querySelector('.submenu');
+            if (hasSubmenu) {
                 activeWrapper.classList.add('expanded');
-                updateSubmenuState(activeWrapper);
             }
         });
 
@@ -1589,16 +1522,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 处理子菜单展开/折叠
                 if (hasSubmenu) {
-                    if (item.classList.contains('active') && wrapper.classList.contains('expanded')) {
-                        wrapper.classList.remove('expanded');
+                    // 如果点击的导航项已经激活且有子菜单，则切换子菜单展开状态
+                    if (item.classList.contains('active')) {
+                        wrapper.classList.toggle('expanded');
                     } else {
-                        collapseAllOtherSubmenus(wrapper);
+                        // 关闭所有已展开的子菜单
+                        navItemWrappers.forEach(navWrapper => {
+                            if (navWrapper !== wrapper) {
+                                navWrapper.classList.remove('expanded');
+                            }
+                        });
+
+                        // 展开当前子菜单
                         wrapper.classList.add('expanded');
                     }
-
-                    updateSubmenuState(wrapper);
-                } else {
-                    collapseAllOtherSubmenus(null);
                 }
 
                 // 激活导航项
@@ -1638,8 +1575,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // 激活相应的导航项
                     navItems.forEach(nav => {
-                        const shouldActivate = nav.getAttribute('data-page') === pageId;
-                        nav.classList.toggle('active', shouldActivate);
+                        nav.classList.toggle('active', nav.getAttribute('data-page') === pageId);
                     });
 
                     // 显示对应页面
@@ -1699,15 +1635,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 初始化嵌套分类功能
         initializeNestedCategories();
-
-        // 窗口尺寸变化时重新计算展开子菜单高度
-        window.addEventListener('resize', () => {
-            navItemWrappers.forEach(wrapper => {
-                if (wrapper.classList.contains('expanded')) {
-                    updateSubmenuState(wrapper);
-                }
-            });
-        });
         
         // 初始化分类切换按钮
         const categoryToggleBtn = document.getElementById('category-toggle');
