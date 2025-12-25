@@ -42,10 +42,6 @@ categories:
         url: http://10.1.1.66:8123/lovelace/default_view
         icon: fas fa-link
         description: ""
-      - name: 青龙
-        url: http://10.1.1.66:15700/crontab
-        icon: fas fa-link
-        description: ""
       - name: LINUX DO
         url: https://linux.do/
         icon: fas fa-link
@@ -102,12 +98,49 @@ categories:
         url: https://img.ops-coffee.com/photo/
         icon: fas fa-link
         description: ""
-      - name: 253-ESXi
-        url: https://10.1.1.253/ui/#/login
+  - name: 内网链接
+    icon: fas fa-folder
+    path:
+      - 内网链接
+    sites:
+      - name: 青龙
+        url: http://10.1.1.66:15700/crontab
         icon: fas fa-link
         description: ""
       - name: 153-esxi
         url: https://10.1.1.153/ui/#/login
+        icon: fas fa-link
+        description: ""
+      - name: 内网WRT
+        url: http://10.1.1.250/cgi-bin/luci/
+        icon: fas fa-link
+        description: ""
+      - name: 内网爱快
+        url: http://10.1.1.1:3579/#/network-setting/lan-wan-set?type=wan&amp;id=1
+        icon: fas fa-link
+        description: ""
+      - name: 内网群晖
+        url: http://10.1.1.251:5000/
+        icon: fas fa-link
+        description: ""
+      - name: Super-NAS-emby
+        url: http://10.1.1.251:8096/web/index.html#!/home
+        icon: fas fa-link
+        description: ""
+      - name: Music Tag Web
+        url: http://10.1.1.251:8002/#/
+        icon: fas fa-link
+        description: ""
+      - name: yacd
+        url: http://10.1.1.250:9090/ui/yacd/#/connections
+        icon: fas fa-link
+        description: ""
+      - name: AdGuard Home
+        url: http://10.1.1.250:3000/
+        icon: fas fa-link
+        description: ""
+      - name: 5G CPE 5
+        url: https://hwcpe.ll.sd/#/developermode
         icon: fas fa-link
         description: ""
   - name: 个人
@@ -115,6 +148,10 @@ categories:
     path:
       - 个人
     sites:
+      - name: 253-ESXi
+        url: https://10.1.1.253/ui/#/login
+        icon: fas fa-link
+        description: ""
       - name: 书签集
         url: edge://favorites/
         icon: fas fa-link
@@ -1679,43 +1716,6 @@ categories:
         description: ""
       - name: Docker经典入门学习教程 - 运维派
         url: http://www.yunweipai.com/34721.html
-        icon: fas fa-link
-        description: ""
-  - name: 内网链接
-    icon: fas fa-folder
-    path:
-      - 内网链接
-    sites:
-      - name: 内网WRT
-        url: http://10.1.1.250/cgi-bin/luci/
-        icon: fas fa-link
-        description: ""
-      - name: 内网爱快
-        url: http://10.1.1.1:3579/#/network-setting/lan-wan-set?type=wan&amp;id=1
-        icon: fas fa-link
-        description: ""
-      - name: 内网群晖
-        url: http://10.1.1.251:5000/
-        icon: fas fa-link
-        description: ""
-      - name: Super-NAS-emby
-        url: http://10.1.1.251:8096/web/index.html#!/home
-        icon: fas fa-link
-        description: ""
-      - name: Music Tag Web
-        url: http://10.1.1.251:8002/#/
-        icon: fas fa-link
-        description: ""
-      - name: yacd
-        url: http://10.1.1.250:9090/ui/yacd/#/connections
-        icon: fas fa-link
-        description: ""
-      - name: AdGuard Home
-        url: http://10.1.1.250:3000/
-        icon: fas fa-link
-        description: ""
-      - name: 5G CPE 5
-        url: https://hwcpe.ll.sd/#/developermode
         icon: fas fa-link
         description: ""
   - name: 免费资源折腾
