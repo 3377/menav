@@ -143,6 +143,10 @@ categories:
         url: https://hwcpe.ll.sd/#/developermode
         icon: fas fa-link
         description: ""
+      - name: 主页 | 辰星影音库
+        url: https://pan.hstz.com/
+        icon: fas fa-link
+        description: ""
   - name: 个人
     icon: fas fa-folder
     path:
