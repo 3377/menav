@@ -5,6 +5,15 @@
 title: 我的书签
 subtitle: 从浏览器导入的书签收藏
 categories:
+  - name: 根目录书签
+    icon: fas fa-star
+    path:
+      - 根目录书签
+    sites:
+      - name: 华为5G CPE设备监控中心
+        url: https://hw.ll.sd/dashboard
+        icon: fas fa-link
+        description: ""
   - name: 常用导航
     icon: fas fa-folder
     path:
@@ -1038,6 +1047,226 @@ categories:
         url: https://docs.qq.com/sheet/DYUNKVU1RWm9ZVXVm?tab=vr7wif
         icon: fas fa-link
         description: ""
+  - name: 免费资源折腾
+    icon: fas fa-folder
+    path:
+      - 免费资源折腾
+    subcategories:
+      - name: 服务器管理
+        icon: fas fa-folder
+        path:
+          - 免费资源折腾
+          - 服务器管理
+        sites:
+          - name: 日本xui面板
+            url: http://131.186.46.129:3579/xui/
+            icon: fas fa-link
+            description: ""
+          - name: 东京宝塔Linux面板
+            url: https://131.186.46.129:10541/home
+            icon: fas fa-link
+            description: ""
+          - name: 圣何塞AMD宝塔Linux面板
+            url: http://192.9.240.53:36826/
+            icon: fas fa-link
+            description: ""
+          - name: 圣何塞ARM宝塔Linux面板
+            url: https://165.1.72.222:21705/b1b758e1
+            icon: fas fa-link
+            description: ""
+          - name: 张欣依-xui
+            url: http://8.219.9.161:3579/ttainidx/panel/
+            icon: fas fa-link
+            description: ""
+          - name: 香港diy-1Panel
+            url: http://156.254.115.114:29933/apps/all
+            icon: fas fa-link
+            description: ""
+          - name: 阿里云SS面板
+            url: http://47.76.65.114:2053/BBkKwmWfgA/panel/
+            icon: fas fa-link
+            description: ""
+          - name: 日本xui-8.211.151.222-x-ui
+            url: http://8.211.151.222:2053/ttainidx/panel/
+            icon: fas fa-link
+            description: ""
+          - name: 阿里轻量云1Panel
+            url: https://hkal.ggaa.eu.org:3579/a24be1a0fb
+            icon: fas fa-link
+            description: ""
+          - name: 首尔SS面板
+            url: http://193.123.247.236:3579/drfy/panel/
+            icon: fas fa-link
+            description: ""
+          - name: 240b:4001:278:8401:ffff:5e3a:58ff:4437-欢迎
+            url: http://[240b:4001:278:8401:ffff:5e3a:58ff:4437]:2053/GiFNa1yxzQ/
+            icon: fas fa-link
+            description: ""
+          - name: 日本claw-1Panel
+            url: http://8.211.151.222:3579/ttainidx
+            icon: fas fa-link
+            description: ""
+    sites:
+      - name: 比较所有顶级域名的价格 | 顶级域名列表
+        url: https://zh-hans.tld-list.com/
+        icon: fas fa-link
+        description: ""
+      - name: 哪里续费com域名最便宜 - 第1页 - 哪煮米
+        url: https://www.nazhumi.com/domain/com/renew
+        icon: fas fa-link
+        description: ""
+      - name: 地址生成器
+        url: https://poi.moyutime.cn/address
+        icon: fas fa-link
+        description: ""
+      - name: Node Hatch开小鸡
+        url: https://www.nodehatch.com/host/coupon
+        icon: fas fa-link
+        description: ""
+      - name: Cloudflare Workers优秀项目收集（持续更新） - iGdu
+        url: https://igdux.com/workers
+        icon: fas fa-link
+        description: ""
+      - name: 精选的 Cloudflare 工具、开源项目、指南、博客和其他资源列表
+        url: https://github.com/zhuima/awesome-cloudflare?tab=readme-ov-file#%E6%B5%8B%E9%80%9F
+        icon: fab fa-github
+        description: ""
+      - name: 接口大全-免费API,收集所有免费的API
+        url: https://www.free-api.com/
+        icon: fas fa-link
+        description: ""
+      - name: OpenClash 常用与维护 - Jacks Blog
+        url: https://blog.dreamtobe.cn/openclash_maintain/
+        icon: fas fa-link
+        description: ""
+      - name: 网络空间测绘，网络空间安全搜索引擎，网络空间搜索引擎，安全态势感知 - FOFA网络空间测绘系统
+        url: https://fofa.info/
+        icon: fas fa-link
+        description: ""
+      - name: Serv00搭建各种服务 | Saika&#039;s Blog
+        url: https://saika.us.kg/2024/01/27/serv00_logs/#One-api
+        icon: fas fa-link
+        description: ""
+      - name: 实现简单 CF Workers AI Bot
+        url: https://blogcdn.blog.highp.ing/p/rustcfwksaibot/#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81
+        icon: fas fa-link
+        description: ""
+      - name: 检查您自己的IP地址和DNS地址
+        url: https://whoer.net/zh
+        icon: fas fa-link
+        description: ""
+      - name: 地址API
+        url: https://saddress.dizhi666.com/getExpressAddress?areaType=2&amp;areaName=%E6%B5%99%E6%B1%9F%E7%9C%81-%E6%9D%AD%E5%B7%9E%E5%B8%82&amp;num=5&amp;orderNo&amp;needEmptyPhone=1&amp;fullRoomNum=1&amp;dataType=communityStreet
+        icon: fas fa-link
+        description: ""
+      - name: 汉字转拼音 - 在线中文汉字拼音转换器_汉语文字转拼音
+        url: https://www.hzzpy.net/
+        icon: fas fa-link
+        description: ""
+      - name: Netlify容器SAAS
+        url: https://app.netlify.com/sites/hstz/overview
+        icon: fas fa-link
+        description: ""
+      - name: 生信用卡3
+        url: https://namso-gen.com/?tab=advance&amp;network=random
+        icon: fas fa-link
+        description: ""
+      - name: 美国信息生成
+        url: https://fauxid.com/fake-name-generator/united-states/alaska?age=18-24
+        icon: fas fa-link
+        description: ""
+      - name: 用fscj学生邮箱接入Apple ID并注册perplexity - 福利羊毛 / 福利羊毛, Lv2 - LINUX DO
+        url: https://linux.do/t/topic/199795
+        icon: fas fa-link
+        description: ""
+      - name: 免费在线接收短信验证码,短信接码,免费接短信,临时手机号码 - 云接码
+        url: https://yunjiema.net/
+        icon: fas fa-link
+        description: ""
+      - name: az100
+        url: https://portal.azure.com/#browse/Microsoft.Compute%2FvirtualMachines
+        icon: fas fa-link
+        description: ""
+      - name: 教育 - Microsoft Azure
+        url: https://portal.azure.com/?Microsoft_Azure_Education_correlationId=e322b8c1-95fd-4391-b05b-8a8096924c35#view/Microsoft_Azure_Education/EducationMenuBlade/~/overview
+        icon: fas fa-link
+        description: ""
+      - name: 学生卡生成器
+        url: https://linux.do/t/topic/46755
+        icon: fas fa-link
+        description: ""
+      - name: 学生证生成器 (仅供内部测试使用)
+        url: https://student-id.pages.dev/
+        icon: fas fa-link
+        description: ""
+      - name: Client Area - Itex Integrated Ventures
+        url: https://customer.itexint.com/clientarea.php?action=domains#
+        icon: fas fa-link
+        description: ""
+      - name: Afriregister - 我的域名 --- Afriregister - My Domains
+        url: https://www.afriregister.com/domainmanager.php
+        icon: fas fa-link
+        description: ""
+      - name: 微软MSTC-EDU邮箱
+        url: https://outlook.office365.com/mail/?url=%2fowa%2f%3frealm%253dmstc.edu
+        icon: fas fa-link
+        description: ""
+      - name: 无损生活 - 全网无损音乐免费下载，音乐搜索,音乐在线试听,下载,在线解析网
+        url: https://flac.life/
+        icon: fas fa-link
+        description: ""
+      - name: 美国地址生成器 - 美国身份生成器 - 美国信用卡生成器
+        url: https://www.meiguodizhi.com/
+        icon: fas fa-link
+        description: ""
+      - name: Domain Name Database | DomDB
+        url: https://domdb.com/
+        icon: fas fa-link
+        description: ""
+      - name: Cloud Studio
+        url: https://ide.cloud.tencent.com/dashboard/ai
+        icon: fas fa-link
+        description: ""
+      - name: 免费监控测活
+        url: https://uptimerobot.com/pricing/
+        icon: fas fa-link
+        description: ""
+      - name: Redis - 免费
+        url: https://console.upstash.com/redis/40f0b209-b771-43db-8ffe-285c9a7e6a8d
+        icon: fas fa-link
+        description: ""
+      - name: Free for Developers
+        url: https://free-for.dev/#/
+        icon: fas fa-link
+        description: ""
+      - name: 临时邮箱 - TempMail.Plus
+        url: https://tempmail.plus/zh/#!mail/2728486994
+        icon: fas fa-link
+        description: ""
+      - name: 艺术文字logo设计,免费logo在线制作,logo设计,公司logo设计,标志设计,U钙网
+        url: https://www.uugai.com/logoa/wenzi.php
+        icon: fas fa-link
+        description: ""
+      - name: 免费pg数据库
+        url: https://console.neon.tech/app/welcome
+        icon: fas fa-link
+        description: ""
+      - name: Billing | drfy&#039;s team | Northflank Cloud Platform
+        url: https://app.northflank.com/t/drfys-team/billing
+        icon: fas fa-link
+        description: ""
+      - name: deno原始管理
+        url: https://dash.deno.com/account/overview
+        icon: fas fa-link
+        description: ""
+      - name: DNSHE.COM免费域名
+        url: https://my.dnshe.com/index.php?m=domain_hub
+        icon: fas fa-link
+        description: ""
+      - name: 信用卡生成测活
+        url: https://chkr.cc/
+        icon: fas fa-link
+        description: ""
   - name: 有意思的
     icon: fas fa-folder
     path:
@@ -1964,225 +2193,5 @@ categories:
         description: ""
       - name: Docker经典入门学习教程 - 运维派
         url: http://www.yunweipai.com/34721.html
-        icon: fas fa-link
-        description: ""
-  - name: 免费资源折腾
-    icon: fas fa-folder
-    path:
-      - 免费资源折腾
-    subcategories:
-      - name: 服务器管理
-        icon: fas fa-folder
-        path:
-          - 免费资源折腾
-          - 服务器管理
-        sites:
-          - name: 日本xui面板
-            url: http://131.186.46.129:3579/xui/
-            icon: fas fa-link
-            description: ""
-          - name: 东京宝塔Linux面板
-            url: https://131.186.46.129:10541/home
-            icon: fas fa-link
-            description: ""
-          - name: 圣何塞AMD宝塔Linux面板
-            url: http://192.9.240.53:36826/
-            icon: fas fa-link
-            description: ""
-          - name: 圣何塞ARM宝塔Linux面板
-            url: https://165.1.72.222:21705/b1b758e1
-            icon: fas fa-link
-            description: ""
-          - name: 张欣依-xui
-            url: http://8.219.9.161:3579/ttainidx/panel/
-            icon: fas fa-link
-            description: ""
-          - name: 香港diy-1Panel
-            url: http://156.254.115.114:29933/apps/all
-            icon: fas fa-link
-            description: ""
-          - name: 阿里云SS面板
-            url: http://47.76.65.114:2053/BBkKwmWfgA/panel/
-            icon: fas fa-link
-            description: ""
-          - name: 日本xui-8.211.151.222-x-ui
-            url: http://8.211.151.222:2053/ttainidx/panel/
-            icon: fas fa-link
-            description: ""
-          - name: 阿里轻量云1Panel
-            url: https://hkal.ggaa.eu.org:3579/a24be1a0fb
-            icon: fas fa-link
-            description: ""
-          - name: 首尔SS面板
-            url: http://193.123.247.236:3579/drfy/panel/
-            icon: fas fa-link
-            description: ""
-          - name: 240b:4001:278:8401:ffff:5e3a:58ff:4437-欢迎
-            url: http://[240b:4001:278:8401:ffff:5e3a:58ff:4437]:2053/GiFNa1yxzQ/
-            icon: fas fa-link
-            description: ""
-          - name: 日本claw-1Panel
-            url: http://8.211.151.222:3579/ttainidx
-            icon: fas fa-link
-            description: ""
-    sites:
-      - name: 比较所有顶级域名的价格 | 顶级域名列表
-        url: https://zh-hans.tld-list.com/
-        icon: fas fa-link
-        description: ""
-      - name: 哪里续费com域名最便宜 - 第1页 - 哪煮米
-        url: https://www.nazhumi.com/domain/com/renew
-        icon: fas fa-link
-        description: ""
-      - name: 地址生成器
-        url: https://poi.moyutime.cn/address
-        icon: fas fa-link
-        description: ""
-      - name: Node Hatch开小鸡
-        url: https://www.nodehatch.com/host/coupon
-        icon: fas fa-link
-        description: ""
-      - name: Cloudflare Workers优秀项目收集（持续更新） - iGdu
-        url: https://igdux.com/workers
-        icon: fas fa-link
-        description: ""
-      - name: 精选的 Cloudflare 工具、开源项目、指南、博客和其他资源列表
-        url: https://github.com/zhuima/awesome-cloudflare?tab=readme-ov-file#%E6%B5%8B%E9%80%9F
-        icon: fab fa-github
-        description: ""
-      - name: 接口大全-免费API,收集所有免费的API
-        url: https://www.free-api.com/
-        icon: fas fa-link
-        description: ""
-      - name: OpenClash 常用与维护 - Jacks Blog
-        url: https://blog.dreamtobe.cn/openclash_maintain/
-        icon: fas fa-link
-        description: ""
-      - name: 网络空间测绘，网络空间安全搜索引擎，网络空间搜索引擎，安全态势感知 - FOFA网络空间测绘系统
-        url: https://fofa.info/
-        icon: fas fa-link
-        description: ""
-      - name: Serv00搭建各种服务 | Saika&#039;s Blog
-        url: https://saika.us.kg/2024/01/27/serv00_logs/#One-api
-        icon: fas fa-link
-        description: ""
-      - name: 实现简单 CF Workers AI Bot
-        url: https://blogcdn.blog.highp.ing/p/rustcfwksaibot/#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81
-        icon: fas fa-link
-        description: ""
-      - name: 检查您自己的IP地址和DNS地址
-        url: https://whoer.net/zh
-        icon: fas fa-link
-        description: ""
-      - name: 地址API
-        url: https://saddress.dizhi666.com/getExpressAddress?areaType=2&amp;areaName=%E6%B5%99%E6%B1%9F%E7%9C%81-%E6%9D%AD%E5%B7%9E%E5%B8%82&amp;num=5&amp;orderNo&amp;needEmptyPhone=1&amp;fullRoomNum=1&amp;dataType=communityStreet
-        icon: fas fa-link
-        description: ""
-      - name: 汉字转拼音 - 在线中文汉字拼音转换器_汉语文字转拼音
-        url: https://www.hzzpy.net/
-        icon: fas fa-link
-        description: ""
-      - name: Netlify容器SAAS
-        url: https://app.netlify.com/sites/hstz/overview
-        icon: fas fa-link
-        description: ""
-      - name: 生信用卡3
-        url: https://namso-gen.com/?tab=advance&amp;network=random
-        icon: fas fa-link
-        description: ""
-      - name: 美国信息生成
-        url: https://fauxid.com/fake-name-generator/united-states/alaska?age=18-24
-        icon: fas fa-link
-        description: ""
-      - name: 用fscj学生邮箱接入Apple ID并注册perplexity - 福利羊毛 / 福利羊毛, Lv2 - LINUX DO
-        url: https://linux.do/t/topic/199795
-        icon: fas fa-link
-        description: ""
-      - name: 免费在线接收短信验证码,短信接码,免费接短信,临时手机号码 - 云接码
-        url: https://yunjiema.net/
-        icon: fas fa-link
-        description: ""
-      - name: az100
-        url: https://portal.azure.com/#browse/Microsoft.Compute%2FvirtualMachines
-        icon: fas fa-link
-        description: ""
-      - name: 教育 - Microsoft Azure
-        url: https://portal.azure.com/?Microsoft_Azure_Education_correlationId=e322b8c1-95fd-4391-b05b-8a8096924c35#view/Microsoft_Azure_Education/EducationMenuBlade/~/overview
-        icon: fas fa-link
-        description: ""
-      - name: 学生卡生成器
-        url: https://linux.do/t/topic/46755
-        icon: fas fa-link
-        description: ""
-      - name: 学生证生成器 (仅供内部测试使用)
-        url: https://student-id.pages.dev/
-        icon: fas fa-link
-        description: ""
-      - name: Client Area - Itex Integrated Ventures
-        url: https://customer.itexint.com/clientarea.php?action=domains#
-        icon: fas fa-link
-        description: ""
-      - name: Afriregister - 我的域名 --- Afriregister - My Domains
-        url: https://www.afriregister.com/domainmanager.php
-        icon: fas fa-link
-        description: ""
-      - name: 微软MSTC-EDU邮箱
-        url: https://outlook.office365.com/mail/?url=%2fowa%2f%3frealm%253dmstc.edu
-        icon: fas fa-link
-        description: ""
-      - name: 无损生活 - 全网无损音乐免费下载，音乐搜索,音乐在线试听,下载,在线解析网
-        url: https://flac.life/
-        icon: fas fa-link
-        description: ""
-      - name: 美国地址生成器 - 美国身份生成器 - 美国信用卡生成器
-        url: https://www.meiguodizhi.com/
-        icon: fas fa-link
-        description: ""
-      - name: Domain Name Database | DomDB
-        url: https://domdb.com/
-        icon: fas fa-link
-        description: ""
-      - name: Cloud Studio
-        url: https://ide.cloud.tencent.com/dashboard/ai
-        icon: fas fa-link
-        description: ""
-      - name: 免费监控测活
-        url: https://uptimerobot.com/pricing/
-        icon: fas fa-link
-        description: ""
-      - name: Redis - 免费
-        url: https://console.upstash.com/redis/40f0b209-b771-43db-8ffe-285c9a7e6a8d
-        icon: fas fa-link
-        description: ""
-      - name: Free for Developers
-        url: https://free-for.dev/#/
-        icon: fas fa-link
-        description: ""
-      - name: 临时邮箱 - TempMail.Plus
-        url: https://tempmail.plus/zh/#!mail/2728486994
-        icon: fas fa-link
-        description: ""
-      - name: 艺术文字logo设计,免费logo在线制作,logo设计,公司logo设计,标志设计,U钙网
-        url: https://www.uugai.com/logoa/wenzi.php
-        icon: fas fa-link
-        description: ""
-      - name: 免费pg数据库
-        url: https://console.neon.tech/app/welcome
-        icon: fas fa-link
-        description: ""
-      - name: Billing | drfy&#039;s team | Northflank Cloud Platform
-        url: https://app.northflank.com/t/drfys-team/billing
-        icon: fas fa-link
-        description: ""
-      - name: deno原始管理
-        url: https://dash.deno.com/account/overview
-        icon: fas fa-link
-        description: ""
-      - name: DNSHE.COM免费域名
-        url: https://my.dnshe.com/index.php?m=domain_hub
-        icon: fas fa-link
-        description: ""
-      - name: 信用卡生成测活
-        url: https://chkr.cc/
         icon: fas fa-link
         description: ""
