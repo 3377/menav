@@ -5,15 +5,6 @@
 title: 我的书签
 subtitle: 从浏览器导入的书签收藏
 categories:
-  - name: 根目录书签
-    icon: fas fa-star
-    path:
-      - 根目录书签
-    sites:
-      - name: 华为5G CPE设备监控中心
-        url: https://hw.ll.sd/dashboard
-        icon: fas fa-link
-        description: ""
   - name: 常用导航
     icon: fas fa-folder
     path:
@@ -154,6 +145,10 @@ categories:
         description: ""
       - name: 5G CPE 5
         url: https://hwcpe.ll.sd/#/developermode
+        icon: fas fa-link
+        description: ""
+      - name: 华为5G CPE设备监控中心
+        url: https://hw.ll.sd/dashboard
         icon: fas fa-link
         description: ""
   - name: 个人
