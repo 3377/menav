@@ -34,10 +34,6 @@ categories:
         url: https://pan.hstz.com/
         icon: fas fa-link
         description: ""
-      - name: Home Assistant
-        url: http://10.1.1.66:8123/lovelace/default_view
-        icon: fas fa-link
-        description: ""
       - name: LINUX DO
         url: https://linux.do/
         icon: fas fa-link
@@ -94,60 +90,17 @@ categories:
     icon: fas fa-folder
     path:
       - 内网链接
-    subcategories:
-      - name: 个人
-        icon: fas fa-folder
-        path:
-          - 内网链接
-          - 个人
-        sites:
-          - name: 书签集
-            url: edge://favorites/
-            icon: fas fa-link
-            description: ""
-          - name: 一线运维各场景监控详解（2022最新汇总）
-            url: https://mp.weixin.qq.com/s/YcfU_RTXtQQx_3JQ8puc7A
-            icon: fas fa-link
-            description: ""
-          - name: 1.2 数据库工作总结 · 运维工作笔记 · 看云
-            url: https://www.kancloud.cn/devops-centos/centos-linux-devops/1558860
-            icon: fas fa-link
-            description: ""
-          - name: DevOps 工具元素周期表 - Ledge DevOps 知识平台
-            url: https://devops.phodal.com/home
-            icon: fas fa-link
-            description: ""
-          - name: linux安全策略加固_ITPUB博客
-            url: http://blog.itpub.net/30592920/viewspace-2143893/
-            icon: fas fa-link
-            description: ""
-          - name: MiaoSS
-            url: https://www.miaosscib.com/my/panel.php?page=1
-            icon: fas fa-link
-            description: ""
-          - name: 全国计算机技术与软件专业技术资格（水平）考试
-            url: http://bm.ruankao.org.cn/sign/in
-            icon: fas fa-link
-            description: ""
-          - name: 运维咖啡吧
-            url: https://blog.ops-coffee.cn/
-            icon: fas fa-link
-            description: ""
-          - name: Not Diamond | The last chatbot you’ll ever need
-            url: https://chat.notdiamond.ai/2d6fadf8-b93e-4c53-b7ce-8326bb87fdd1
-            icon: fas fa-link
-            description: ""
-          - name: 在线传文件
-            url: https://www.filemail.com/
-            icon: fas fa-link
-            description: ""
-          - name: onehub仪表盘
-            url: https://bbbb.grafana.net/goto/WJ6w7UNHg?orgId=1
-            icon: fas fa-link
-            description: ""
     sites:
+      - name: 153-esxi
+        url: https://10.1.1.153/ui/#/login
+        icon: fas fa-link
+        description: ""
       - name: 253-ESXi
         url: https://10.1.1.253/ui/#/login
+        icon: fas fa-link
+        description: ""
+      - name: Home Assistant
+        url: http://10.1.1.66:8123/lovelace/default_view
         icon: fas fa-link
         description: ""
       - name: 超哥家里云爱快-系统概况
@@ -160,10 +113,6 @@ categories:
         description: ""
       - name: 青龙
         url: http://10.1.1.66:15700/crontab
-        icon: fas fa-link
-        description: ""
-      - name: 153-esxi
-        url: https://10.1.1.153/ui/#/login
         icon: fas fa-link
         description: ""
       - name: 内网WRT
@@ -200,6 +149,55 @@ categories:
         description: ""
       - name: 华为5G CPE设备监控中心
         url: https://hw.ll.sd/dashboard
+        icon: fas fa-link
+        description: ""
+  - name: 个人
+    icon: fas fa-folder
+    path:
+      - 个人
+    sites:
+      - name: 书签集
+        url: edge://favorites/
+        icon: fas fa-link
+        description: ""
+      - name: 一线运维各场景监控详解（2022最新汇总）
+        url: https://mp.weixin.qq.com/s/YcfU_RTXtQQx_3JQ8puc7A
+        icon: fas fa-link
+        description: ""
+      - name: 1.2 数据库工作总结 · 运维工作笔记 · 看云
+        url: https://www.kancloud.cn/devops-centos/centos-linux-devops/1558860
+        icon: fas fa-link
+        description: ""
+      - name: DevOps 工具元素周期表 - Ledge DevOps 知识平台
+        url: https://devops.phodal.com/home
+        icon: fas fa-link
+        description: ""
+      - name: linux安全策略加固_ITPUB博客
+        url: http://blog.itpub.net/30592920/viewspace-2143893/
+        icon: fas fa-link
+        description: ""
+      - name: MiaoSS
+        url: https://www.miaosscib.com/my/panel.php?page=1
+        icon: fas fa-link
+        description: ""
+      - name: 全国计算机技术与软件专业技术资格（水平）考试
+        url: http://bm.ruankao.org.cn/sign/in
+        icon: fas fa-link
+        description: ""
+      - name: 运维咖啡吧
+        url: https://blog.ops-coffee.cn/
+        icon: fas fa-link
+        description: ""
+      - name: Not Diamond | The last chatbot you’ll ever need
+        url: https://chat.notdiamond.ai/2d6fadf8-b93e-4c53-b7ce-8326bb87fdd1
+        icon: fas fa-link
+        description: ""
+      - name: 在线传文件
+        url: https://www.filemail.com/
+        icon: fas fa-link
+        description: ""
+      - name: onehub仪表盘
+        url: https://bbbb.grafana.net/goto/WJ6w7UNHg?orgId=1
         icon: fas fa-link
         description: ""
   - name: AI相关
