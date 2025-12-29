@@ -25,7 +25,7 @@ categories:
       - name: 卡号圈
         icon: fas fa-pen
         description: 卡圈最新资讯
-        url: https://kahaoquan.com/forum.php?mod=rss&action=forum&fid=10
+        url: https://kahaoquan.com/forum.php?mod=rss
       - name: 极客优惠
         icon: fas fa-pen
         description: 极客最新资讯
