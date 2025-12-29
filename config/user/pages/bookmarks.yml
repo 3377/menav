@@ -99,12 +99,12 @@ categories:
         url: https://10.1.1.253/ui/#/login
         icon: fas fa-link
         description: ""
-      - name: Home Assistant
-        url: http://10.1.1.66:8123/lovelace/default_view
-        icon: fas fa-link
-        description: ""
       - name: 超哥家里云爱快-系统概况
         url: http://10.1.1.1:3579/#/system-overview
+        icon: fas fa-link
+        description: ""
+      - name: Home Assistant
+        url: http://10.1.1.66:8123/lovelace/default_view
         icon: fas fa-link
         description: ""
       - name: 飞牛Nas
@@ -149,6 +149,10 @@ categories:
         description: ""
       - name: 华为5G CPE设备监控中心
         url: https://hw.ll.sd/dashboard
+        icon: fas fa-link
+        description: ""
+      - name: drfy - Proxmox Virtual Environment
+        url: https://8.211.151.222:8006/#v1:0:=node%2Fdrfy:4:5::::::5
         icon: fas fa-link
         description: ""
   - name: 个人
