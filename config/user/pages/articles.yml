@@ -11,7 +11,7 @@ template: articles
 # - 显示时会将“该分类下配置的站点”抓取到的文章聚合展示在该分类下
 # 重要：url 应填写“站点首页 URL”（不是某一篇文章链接），系统会自动发现 RSS/Atom。
 categories:
-  - name: 个人博客
+  - name: 科技羊毛资讯
     icon: fas fa-rss
     sites:
       - name: 阮一峰的网络日志
@@ -22,22 +22,22 @@ categories:
         icon: fas fa-pen
         description: 偶尔会写点什么
         url: https://blog.rzlnb.top/
-      - name: 天仙子
+      - name: 卡号圈
         icon: fas fa-pen
-        description: tianxianzi
-        url: https://www.tianxianzi.me/
-      - name: pseudoyu
+        description: 卡圈最新资讯
+        url: https://kahaoquan.com/forum.php?mod=rss&action=forum&fid=10
+      - name: 极客优惠
         icon: fas fa-pen
-        description: pseudoyu
-        url: https://www.pseudoyu.com/
-  - name: 官方博客
+        description: 极客最新资讯
+        url: https://jike.info/recent.rss
+  - name: AI资讯
     icon: fas fa-rss
     sites:
-      - name: GitHub Blog
+      - name: Linux DO
         icon: fab fa-github
-        description: GitHub 官方博客（工程/产品/安全）
-        url: https://github.blog/
-      - name: Cloudflare Blog
+        description: 最新AI 服务器资讯
+        url: https://api.dbot.pp.ua/v1/rss/linuxdocs
+      - name: Node Seek
         icon: fas fa-cloud
-        description: Cloudflare 工程与安全博客
-        url: https://blog.cloudflare.com/
+        description: NodeSeek 最新资讯
+        url: https://rss.nodeseek.com

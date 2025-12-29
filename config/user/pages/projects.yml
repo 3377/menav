@@ -16,18 +16,18 @@ categories:
   - name: 个人项目
     icon: fas fa-code  # 分类图标（Font Awesome）
     sites:
-      - name: MeNav
+      - name: rss2tg
         icon: fab fa-github       # 手动图标（manual 模式显示；favicon 模式下作为回退）
-        description: 一键部署的个人导航站生成器，支持书签导入与自动构建，轻松整理展示您的网络收藏 # 站点描述
-        url: https://github.com/rbetree/menav
-      - name: MarksVault
+        description: 用于将自定义RSS地址，字段，刷新时间里的相关帖子即时发送到自定义TG用户或频道 # 站点描述
+        url: https://github.com/3377/rss2tg
+      - name: cxss
         icon: fab fa-github
-        description: 一个强大的浏览器扩展，用于智能管理、整理和安全备份您的书签数据
-        url: "https://github.com/rbetree/MarksVault"
+        description: 基于 ACL4SSR 规则优化的 Clash 智能分流配置，专为辰星服务生态设计，提供高效、稳定的网络代理分流解决方案。
+        url: "https://github.com/3377/cxss"
   - name: star
     icon: fas fa-star
     sites:
-      - name: CLIProxyAPI
+      - name: Telegram-115bot
         icon: fab fa-github
-        description: Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen model through API
-        url: "https://github.com/router-for-me/CLIProxyAPI"
+        description: 一个基于 Python 的 Telegram 机器人，用于管理和控制 115 网盘，支持离线下载、视频上传、目录同步等功能。
+        url: "https://github.com/qiqiandfei/Telegram-115bot"
