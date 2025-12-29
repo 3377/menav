@@ -151,7 +151,7 @@ categories:
         url: https://hw.ll.sd/dashboard
         icon: fas fa-link
         description: ""
-      - name: drfy - Proxmox Virtual Environment
+      - name: PVE-隧道
         url: https://8.211.151.222:8006/#v1:0:=node%2Fdrfy:4:5::::::5
         icon: fas fa-link
         description: ""
