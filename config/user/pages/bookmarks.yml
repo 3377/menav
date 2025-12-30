@@ -131,10 +131,6 @@ categories:
         url: http://10.1.1.251:8096/web/index.html#!/home
         icon: fas fa-link
         description: ""
-      - name: Music Tag Web
-        url: http://10.1.1.251:8002/#/
-        icon: fas fa-link
-        description: ""
       - name: yacd
         url: http://10.1.1.250:9090/ui/yacd/#/connections
         icon: fas fa-link
@@ -192,10 +188,6 @@ categories:
         url: https://blog.ops-coffee.cn/
         icon: fas fa-link
         description: ""
-      - name: Not Diamond | The last chatbot you’ll ever need
-        url: https://chat.notdiamond.ai/2d6fadf8-b93e-4c53-b7ce-8326bb87fdd1
-        icon: fas fa-link
-        description: ""
       - name: 在线传文件
         url: https://www.filemail.com/
         icon: fas fa-link
@@ -215,10 +207,6 @@ categories:
           - AI相关
           - 免费在线使用
         sites:
-          - name: Aurora.ai - 看更大的世界
-            url: https://aurorai.cn/chat/#/
-            icon: fas fa-link
-            description: ""
           - name: 茶台AI
             url: https://www.chatai.ee/chat
             icon: fas fa-link
@@ -239,10 +227,6 @@ categories:
             url: https://llamacoder.together.ai/
             icon: fas fa-link
             description: ""
-          - name: 聊天仪表盘
-            url: https://aichatru.ru/zh-CN/app
-            icon: fas fa-link
-            description: ""
           - name: 潺潺流水小桥家 | ChatK
             url: https://chat2.oaichat.cc/c/e84a73f3-1763-45bb-90ff-acf7ecaa1478
             icon: fas fa-link
@@ -257,10 +241,6 @@ categories:
             description: ""
           - name: OpenGPT 4o - a Hugging Face Space by KingNish
             url: https://huggingface.co/spaces/KingNish/OpenGPT-4o
-            icon: fas fa-link
-            description: ""
-          - name: 200K claude
-            url: https://hermchats.com/chat
             icon: fas fa-link
             description: ""
           - name: 始皇的ChatGPT
@@ -301,10 +281,6 @@ categories:
             description: ""
           - name: 360AI助手
             url: https://bot.360.com/cooperation
-            icon: fas fa-link
-            description: ""
-          - name: 在线AI抠图
-            url: https://text2img.vip/dashboard/playground/remove-bg
             icon: fas fa-link
             description: ""
           - name: Arya - 在线 Markdown 编辑器
@@ -390,10 +366,6 @@ categories:
         description: ""
       - name: 免费数据库 | drfy | Aiven
         url: https://console.aiven.io/account/a4d3451791e3/project/fyai/services/drfy/overview
-        icon: fas fa-link
-        description: ""
-      - name: API.66D.EU
-        url: https://api.66d.eu/panel/profile
         icon: fas fa-link
         description: ""
       - name: 免费ChatGPT1
@@ -641,10 +613,6 @@ categories:
             url: https://madou.club/%e5%bc%ba%e4%b8%8a%e5%a6%b9%e5%a6%b9-%e7%9b%b4%e6%8d%a3%e9%bb%84%e9%be%99-%e5%8b%87%e6%8b%bf%e4%b8%80%e8%a1%80.html
             icon: fas fa-link
             description: ""
-          - name: VIDEOS - Search Results For &#039;鹿少女&#039; - Avgle
-            url: https://avgle.com/search/videos/%E9%B9%BF%E5%B0%91%E5%A5%B3
-            icon: fas fa-link
-            description: ""
           - name: 清纯学妹借口补习表白即将毕业学长 献出自己的第一次-麻豆社
             url: https://madou.club/%e6%b8%85%e7%ba%af%e5%ad%a6%e5%a6%b9%e5%80%9f%e5%8f%a3%e8%a1%a5%e4%b9%a0%e8%a1%a8%e7%99%bd%e5%8d%b3%e5%b0%86%e6%af%95%e4%b8%9a%e5%ad%a6%e9%95%bf.html
             icon: fas fa-link
@@ -874,16 +842,8 @@ categories:
         url: http://www.logomaker.com.cn/logo-maker.jsp
         icon: fas fa-link
         description: ""
-      - name: 搜刮好东西-好东西分享、源码分享、免费分享、营销推广、技术交流。
-        url: http://www.sogua2008.com/
-        icon: fas fa-link
-        description: ""
       - name: HiPPTER | PPT资源导航 | PPT模板下载
         url: http://www.hippter.com/
-        icon: fas fa-link
-        description: ""
-      - name: 用分期 - 管理员登录
-        url: http://139.196.17.27/m.php?m=Public&amp;a=login&amp;
         icon: fas fa-link
         description: ""
       - name: 佳句赏析_&quot;人生的长度我们无法测量，我们只能看着时光流逝，在似水流年里，我们也曾迷失，有过彷徨，而时光交错，一切已成过往，我们却无能为力，只能在时光里听着记忆浅唱。&quot; 原作者
@@ -1174,10 +1134,6 @@ categories:
         url: https://fauxid.com/fake-name-generator/united-states/alaska?age=18-24
         icon: fas fa-link
         description: ""
-      - name: 用fscj学生邮箱接入Apple ID并注册perplexity - 福利羊毛 / 福利羊毛, Lv2 - LINUX DO
-        url: https://linux.do/t/topic/199795
-        icon: fas fa-link
-        description: ""
       - name: 免费在线接收短信验证码,短信接码,免费接短信,临时手机号码 - 云接码
         url: https://yunjiema.net/
         icon: fas fa-link
@@ -1366,10 +1322,6 @@ categories:
             url: https://zhuanlan.zhihu.com/p/561464794
             icon: fas fa-link
             description: ""
-          - name: 借助CloudFlare Pro套餐的Spectrum实现SSH加速，解决绕路、IPv6 VPS的…
-            url: https://haoduck.com/691.html
-            icon: fas fa-link
-            description: ""
           - name: 库苏恩
             url: https://virt.spiritlhl.net/
             icon: fas fa-link
@@ -1506,10 +1458,6 @@ categories:
             url: https://www.kancloud.cn/noahs/linux/1536906
             icon: fas fa-link
             description: ""
-          - name: ICT学堂-浙江华为旗下平台
-            url: https://www.ictxuetang.com/bict/course/detail?courseId=1002651732234809344
-            icon: fas fa-link
-            description: ""
           - name: 最强的linux命令总结.pdf
             url: https://mp.weixin.qq.com/s/Vw5fGwSeFps_mRj7kWK-Ng
             icon: fas fa-link
@@ -1570,10 +1518,6 @@ categories:
             description: ""
           - name: Python_Openpyxl-excel操作
             url: https://blog.csdn.net/weixin_43094965/article/details/82226263
-            icon: fas fa-link
-            description: ""
-          - name: (1条消息)Python使用openpyxl库操作Excel之（二）访问已有的Excel文件_Python_Gsdxiaohei-CSDN博客
-            url: https://blog.csdn.net/Gsdxiaohei/article/details/82052889?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task
             icon: fas fa-link
             description: ""
           - name: VMware vCenter 6.7安装及群集配置介绍（一）_运维_spring cloud 微服务技术开发-CSDN博客
