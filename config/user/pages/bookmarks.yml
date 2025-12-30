@@ -151,6 +151,10 @@ categories:
         url: https://8.211.151.222:8006/#v1:0:=node%2Fdrfy:4:5::::::5
         icon: fas fa-link
         description: ""
+      - name: 服务器 | 哪吒服务器监控
+        url: https://nezha-v0.mereith.dev/guide/servers.html#%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%99%A8
+        icon: fas fa-link
+        description: ""
   - name: 个人
     icon: fas fa-folder
     path:
@@ -1690,10 +1694,6 @@ categories:
             description: ""
           - name: ZABBIX利用自带模板监控mysql数据库-细哥细妹-51CTO博客
             url: https://blog.51cto.com/12131824/2344353
-            icon: fas fa-link
-            description: ""
-          - name: 字符云监控系统(xrkmonitor)
-            url: http://open.xrkmonitor.cn/
             icon: fas fa-link
             description: ""
           - name: "大屏数据展示模板: 各类大屏展示模板持续更新中..."
