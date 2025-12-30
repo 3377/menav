@@ -729,10 +729,6 @@ categories:
             url: http://www.builive.com/scaffolding/index.php
             icon: fas fa-link
             description: ""
-          - name: ThinkPHP单字母函数详解
-            url: http://www.thinkphp.cn/document/309.html
-            icon: fas fa-link
-            description: ""
           - name: C#操作INI文件 - 那叫啥啥啥的，你过来...... - 博客频道 - CSDN.NET
             url: http://blog.csdn.net/sdfkfkd/article/details/7050733
             icon: fas fa-link
