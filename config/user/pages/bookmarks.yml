@@ -86,6 +86,10 @@ categories:
         url: https://img.ops-coffee.com/photo/
         icon: fas fa-link
         description: ""
+      - name: SubBoost - Clash 订阅增强服务
+        url: https://ryan-ai.de/
+        icon: fas fa-link
+        description: ""
   - name: 内网链接
     icon: fas fa-folder
     path:
@@ -423,6 +427,10 @@ categories:
       - name: Google AI Studio-API详情
         url: https://aistudio.google.com/u/5/usage?project=gen-lang-client-0727000128&amp;tab=rate-limit&amp;timeRange=last-28-days
         icon: fab fa-google
+        description: ""
+      - name: 香蕉皮 AI
+        url: https://nanobanana.xiao.mom/
+        icon: fas fa-link
         description: ""
   - name: 工具类
     icon: fas fa-folder
