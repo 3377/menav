@@ -436,6 +436,10 @@ categories:
         url: https://www.anygen.io/home
         icon: fas fa-link
         description: ""
+      - name: NiuLink - 节点管理
+        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=50&amp;owner=self
+        icon: fas fa-link
+        description: ""
   - name: 工具类
     icon: fas fa-folder
     path:
