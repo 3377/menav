@@ -90,6 +90,10 @@ categories:
         url: https://ryan-ai.de/
         icon: fas fa-link
         description: ""
+      - name: NiuLink - 节点管理
+        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=50&amp;owner=self
+        icon: fas fa-link
+        description: ""
   - name: 内网链接
     icon: fas fa-folder
     path:
@@ -434,10 +438,6 @@ categories:
         description: ""
       - name: AnyGen智能体-生PPT
         url: https://www.anygen.io/home
-        icon: fas fa-link
-        description: ""
-      - name: NiuLink - 节点管理
-        url: https://portal.niulinkcloud.cn/lite/node-operation/nodes/all?page=1&amp;size=50&amp;owner=self
         icon: fas fa-link
         description: ""
   - name: 工具类
@@ -1708,12 +1708,12 @@ categories:
             url: https://blog.51cto.com/12131824/2344353
             icon: fas fa-link
             description: ""
-          - name: "大屏数据展示模板: 各类大屏展示模板持续更新中..."
-            url: https://gitee.com/lvyeyou/DaShuJuZhiDaPingZhanShi
-            icon: fas fa-link
-            description: ""
           - name: 葫芦视频
             url: http://www.wgstart.com/
+            icon: fas fa-link
+            description: ""
+          - name: "大屏数据展示模板: 各类大屏展示模板持续更新中..."
+            url: https://gitee.com/lvyeyou/DaShuJuZhiDaPingZhanShi
             icon: fas fa-link
             description: ""
     sites:
