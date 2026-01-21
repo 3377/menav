@@ -440,6 +440,10 @@ categories:
         url: https://www.anygen.io/home
         icon: fas fa-link
         description: ""
+      - name: Office Agent
+        url: https://stride.microsoft.com/
+        icon: fab fa-microsoft
+        description: ""
   - name: 工具类
     icon: fas fa-folder
     path:
