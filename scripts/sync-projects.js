@@ -3,6 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 const { loadConfig } = require('../src/generator.js');
+const { createLogger, isVerbose, startTimer } = require('../src/generator/utils/logger');
+
+const log = createLogger('sync:projects');
 
 const DEFAULT_SETTINGS = {
   enabled: true,
@@ -10,12 +13,12 @@ const DEFAULT_SETTINGS = {
   fetch: {
     timeoutMs: 10_000,
     concurrency: 4,
-    userAgent: 'MeNavProjectsSync/1.0'
+    userAgent: 'MeNavProjectsSync/1.0',
   },
   colors: {
     url: 'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json',
-    maxAgeMs: 7 * 24 * 60 * 60 * 1000
-  }
+    maxAgeMs: 7 * 24 * 60 * 60 * 1000,
+  },
 };
 
 function parseBooleanEnv(value, fallback) {
@@ -34,25 +37,35 @@ function parseIntegerEnv(value, fallback) {
 
 function getSettings(config) {
   const fromConfig =
-    config && config.site && config.site.github && typeof config.site.github === 'object' ? config.site.github : {};
+    config && config.site && config.site.github && typeof config.site.github === 'object'
+      ? config.site.github
+      : {};
 
   const merged = {
     ...DEFAULT_SETTINGS,
     ...fromConfig,
     fetch: {
       ...DEFAULT_SETTINGS.fetch,
-      ...(fromConfig.fetch || {})
+      ...(fromConfig.fetch || {}),
     },
     colors: {
       ...DEFAULT_SETTINGS.colors,
-      ...(fromConfig.colors || {})
-    }
+      ...(fromConfig.colors || {}),
+    },
   };
 
   merged.enabled = parseBooleanEnv(process.env.PROJECTS_ENABLED, merged.enabled);
-  merged.cacheDir = process.env.PROJECTS_CACHE_DIR ? String(process.env.PROJECTS_CACHE_DIR) : merged.cacheDir;
-  merged.fetch.timeoutMs = parseIntegerEnv(process.env.PROJECTS_FETCH_TIMEOUT, merged.fetch.timeoutMs);
-  merged.fetch.concurrency = parseIntegerEnv(process.env.PROJECTS_FETCH_CONCURRENCY, merged.fetch.concurrency);
+  merged.cacheDir = process.env.PROJECTS_CACHE_DIR
+    ? String(process.env.PROJECTS_CACHE_DIR)
+    : merged.cacheDir;
+  merged.fetch.timeoutMs = parseIntegerEnv(
+    process.env.PROJECTS_FETCH_TIMEOUT,
+    merged.fetch.timeoutMs
+  );
+  merged.fetch.concurrency = parseIntegerEnv(
+    process.env.PROJECTS_FETCH_CONCURRENCY,
+    merged.fetch.concurrency
+  );
 
   merged.fetch.timeoutMs = Math.max(1_000, merged.fetch.timeoutMs);
   merged.fetch.concurrency = Math.max(1, Math.min(10, merged.fetch.concurrency));
@@ -83,16 +96,19 @@ function isGithubRepoUrl(url) {
 
 function collectSitesRecursively(node, output) {
   if (!node || typeof node !== 'object') return;
-  if (Array.isArray(node.subcategories)) node.subcategories.forEach(child => collectSitesRecursively(child, output));
-  if (Array.isArray(node.groups)) node.groups.forEach(child => collectSitesRecursively(child, output));
-  if (Array.isArray(node.subgroups)) node.subgroups.forEach(child => collectSitesRecursively(child, output));
-  if (Array.isArray(node.sites)) node.sites.forEach(site => output.push(site));
+  if (Array.isArray(node.subcategories))
+    node.subcategories.forEach((child) => collectSitesRecursively(child, output));
+  if (Array.isArray(node.groups))
+    node.groups.forEach((child) => collectSitesRecursively(child, output));
+  if (Array.isArray(node.subgroups))
+    node.subgroups.forEach((child) => collectSitesRecursively(child, output));
+  if (Array.isArray(node.sites)) node.sites.forEach((site) => output.push(site));
 }
 
 function findProjectsPages(config) {
   const pages = [];
   const nav = Array.isArray(config.navigation) ? config.navigation : [];
-  nav.forEach(item => {
+  nav.forEach((item) => {
     const pageId = item && item.id ? String(item.id) : '';
     if (!pageId || !config[pageId]) return;
     const page = config[pageId];
@@ -131,13 +147,18 @@ async function loadLanguageColors(settings, cacheBaseDir) {
 
   try {
     const headers = { 'user-agent': settings.fetch.userAgent, accept: 'application/json' };
-    const colors = await fetchJsonWithTimeout(settings.colors.url, { timeoutMs: settings.fetch.timeoutMs, headers });
+    const colors = await fetchJsonWithTimeout(settings.colors.url, {
+      timeoutMs: settings.fetch.timeoutMs,
+      headers,
+    });
     if (colors && typeof colors === 'object') {
       fs.writeFileSync(cachePath, JSON.stringify(colors, null, 2), 'utf8');
       return colors;
     }
   } catch (error) {
-    console.warn(`[WARN] 获取语言颜色表失败（将不输出 languageColor）：${String(error && error.message ? error.message : error)}`);
+    log.warn('获取语言颜色表失败（将不输出 languageColor）', {
+      message: String(error && error.message ? error.message : error),
+    });
   }
 
   return {};
@@ -146,7 +167,7 @@ async function loadLanguageColors(settings, cacheBaseDir) {
 async function fetchRepoMeta(repo, settings, colors) {
   const headers = {
     'user-agent': settings.fetch.userAgent,
-    accept: 'application/vnd.github+json'
+    accept: 'application/vnd.github+json',
   };
 
   const apiUrl = `https://api.github.com/repos/${repo.owner}/${repo.repo}`;
@@ -167,7 +188,7 @@ async function fetchRepoMeta(repo, settings, colors) {
     language,
     languageColor,
     stars,
-    forks
+    forks,
   };
 }
 
@@ -191,54 +212,67 @@ async function runPool(items, concurrency, worker) {
 }
 
 async function main() {
+  const elapsedMs = startTimer();
   const config = loadConfig();
   const settings = getSettings(config);
 
+  log.info('开始');
+
   if (!settings.enabled) {
-    console.log('[INFO] projects 仓库同步已禁用（PROJECTS_ENABLED=false）');
+    log.ok('projects 仓库同步已禁用，跳过', { env: 'PROJECTS_ENABLED=false' });
     return;
   }
 
-  const cacheBaseDir = path.isAbsolute(settings.cacheDir) ? settings.cacheDir : path.join(process.cwd(), settings.cacheDir);
+  const cacheBaseDir = path.isAbsolute(settings.cacheDir)
+    ? settings.cacheDir
+    : path.join(process.cwd(), settings.cacheDir);
   ensureDir(cacheBaseDir);
 
   const colors = await loadLanguageColors(settings, cacheBaseDir);
   const pages = findProjectsPages(config);
 
   if (!pages.length) {
-    console.log('[INFO] 未找到 template=projects 的页面，跳过同步');
+    log.ok('未找到 template=projects 的页面，跳过同步');
     return;
   }
+
+  log.info('准备同步 projects 页面缓存', { pages: pages.length });
+
+  let pageSuccess = 0;
+  let pageFailed = 0;
 
   for (const { pageId, page } of pages) {
     const categories = Array.isArray(page.categories) ? page.categories : [];
     const sites = [];
-    categories.forEach(category => collectSitesRecursively(category, sites));
+    categories.forEach((category) => collectSitesRecursively(category, sites));
 
     const repos = sites
-      .map(site => (site && site.url ? isGithubRepoUrl(site.url) : null))
+      .map((site) => (site && site.url ? isGithubRepoUrl(site.url) : null))
       .filter(Boolean);
 
     const unique = new Map();
-    repos.forEach(r => unique.set(r.canonicalUrl, r));
+    repos.forEach((r) => unique.set(r.canonicalUrl, r));
     const repoList = Array.from(unique.values());
 
     if (!repoList.length) {
-      console.log(`[INFO] 页面 ${pageId}：未发现 GitHub 仓库链接，跳过`);
+      log.ok('页面未发现 GitHub 仓库链接，跳过', { page: pageId });
       continue;
     }
 
     let success = 0;
     let failed = 0;
 
-    const results = await runPool(repoList, settings.fetch.concurrency, async repo => {
+    const results = await runPool(repoList, settings.fetch.concurrency, async (repo) => {
       try {
         const meta = await fetchRepoMeta(repo, settings, colors);
         success += 1;
         return meta;
       } catch (error) {
         failed += 1;
-        console.warn(`[WARN] 拉取失败：${repo.canonicalUrl}（${String(error && error.message ? error.message : error)}）`);
+        log.warn('拉取仓库元信息失败（best-effort）', {
+          repo: repo.canonicalUrl,
+          message: String(error && error.message ? error.message : error),
+        });
         return null;
       }
     });
@@ -251,19 +285,31 @@ async function main() {
       stats: {
         totalRepos: repoList.length,
         success,
-        failed
-      }
+        failed,
+      },
     };
 
     const cachePath = path.join(cacheBaseDir, `${pageId}.repo-cache.json`);
     fs.writeFileSync(cachePath, JSON.stringify(payload, null, 2), 'utf8');
 
-    console.log(`[INFO] 页面 ${pageId}：同步完成（成功 ${success} / 失败 ${failed}），写入缓存 ${cachePath}`);
+    if (failed === 0) pageSuccess += 1;
+    else pageFailed += 1;
+
+    log.ok('页面同步完成', {
+      page: pageId,
+      success,
+      failed,
+      cache: cachePath,
+    });
   }
+
+  log.ok('完成', { ms: elapsedMs(), pages: pages.length, pageSuccess, pageFailed });
 }
 
-main().catch(error => {
-  console.error('[ERROR] projects 同步异常：', error);
+main().catch((error) => {
+  log.error('执行异常（best-effort，不阻断后续 build）', {
+    message: error && error.message ? error.message : String(error),
+  });
+  if (isVerbose() && error && error.stack) console.error(error.stack);
   process.exitCode = 0; // best-effort：不阻断后续 build
 });
-

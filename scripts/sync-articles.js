@@ -6,6 +6,9 @@ const net = require('node:net');
 const Parser = require('rss-parser');
 
 const { loadConfig } = require('../src/generator.js');
+const { createLogger, isVerbose, startTimer } = require('../src/generator/utils/logger');
+
+const log = createLogger('sync:articles');
 
 const DEFAULT_RSS_SETTINGS = {
   enabled: true,
@@ -18,13 +21,13 @@ const DEFAULT_RSS_SETTINGS = {
     maxRedirects: 3,
     userAgent: 'MeNavRSSSync/1.0',
     htmlMaxBytes: 512 * 1024,
-    feedMaxBytes: 1024 * 1024
+    feedMaxBytes: 1024 * 1024,
   },
   articles: {
     perSite: 8,
     total: 50,
-    summaryMaxLength: 200
-  }
+    summaryMaxLength: 200,
+  },
 };
 
 function parseBooleanEnv(value, fallback) {
@@ -42,21 +45,22 @@ function parseIntegerEnv(value, fallback) {
 }
 
 function getRssSettings(config) {
-  const fromConfig = (config && config.site && config.site.rss && typeof config.site.rss === 'object')
-    ? config.site.rss
-    : {};
+  const fromConfig =
+    config && config.site && config.site.rss && typeof config.site.rss === 'object'
+      ? config.site.rss
+      : {};
 
   const merged = {
     ...DEFAULT_RSS_SETTINGS,
     ...fromConfig,
     fetch: {
       ...DEFAULT_RSS_SETTINGS.fetch,
-      ...(fromConfig.fetch || {})
+      ...(fromConfig.fetch || {}),
     },
     articles: {
       ...DEFAULT_RSS_SETTINGS.articles,
-      ...(fromConfig.articles || {})
-    }
+      ...(fromConfig.articles || {}),
+    },
   };
 
   // 环境变量覆盖（主要给 CI 调试/降级用）
@@ -64,12 +68,27 @@ function getRssSettings(config) {
   merged.cacheDir = process.env.RSS_CACHE_DIR ? String(process.env.RSS_CACHE_DIR) : merged.cacheDir;
 
   merged.fetch.timeoutMs = parseIntegerEnv(process.env.RSS_FETCH_TIMEOUT, merged.fetch.timeoutMs);
-  merged.fetch.maxRetries = parseIntegerEnv(process.env.RSS_FETCH_MAX_RETRIES, merged.fetch.maxRetries);
-  merged.fetch.concurrency = parseIntegerEnv(process.env.RSS_FETCH_CONCURRENCY, merged.fetch.concurrency);
-  merged.fetch.totalTimeoutMs = parseIntegerEnv(process.env.RSS_TOTAL_TIMEOUT, merged.fetch.totalTimeoutMs);
-  merged.fetch.maxRedirects = parseIntegerEnv(process.env.RSS_FETCH_MAX_REDIRECTS, merged.fetch.maxRedirects);
+  merged.fetch.maxRetries = parseIntegerEnv(
+    process.env.RSS_FETCH_MAX_RETRIES,
+    merged.fetch.maxRetries
+  );
+  merged.fetch.concurrency = parseIntegerEnv(
+    process.env.RSS_FETCH_CONCURRENCY,
+    merged.fetch.concurrency
+  );
+  merged.fetch.totalTimeoutMs = parseIntegerEnv(
+    process.env.RSS_TOTAL_TIMEOUT,
+    merged.fetch.totalTimeoutMs
+  );
+  merged.fetch.maxRedirects = parseIntegerEnv(
+    process.env.RSS_FETCH_MAX_REDIRECTS,
+    merged.fetch.maxRedirects
+  );
 
-  merged.articles.perSite = parseIntegerEnv(process.env.RSS_ARTICLES_PER_SITE, merged.articles.perSite);
+  merged.articles.perSite = parseIntegerEnv(
+    process.env.RSS_ARTICLES_PER_SITE,
+    merged.articles.perSite
+  );
   merged.articles.total = parseIntegerEnv(process.env.RSS_ARTICLES_TOTAL, merged.articles.total);
   merged.articles.summaryMaxLength = parseIntegerEnv(
     process.env.RSS_SUMMARY_MAX_LENGTH,
@@ -104,8 +123,9 @@ function isPrivateIp(ip) {
   if (!ip) return true;
 
   if (net.isIP(ip) === 4) {
-    const parts = ip.split('.').map(n => Number.parseInt(n, 10));
-    if (parts.length !== 4 || parts.some(n => !Number.isFinite(n) || n < 0 || n > 255)) return true;
+    const parts = ip.split('.').map((n) => Number.parseInt(n, 10));
+    if (parts.length !== 4 || parts.some((n) => !Number.isFinite(n) || n < 0 || n > 255))
+      return true;
 
     const [a, b] = parts;
     if (a === 10) return true;
@@ -152,7 +172,12 @@ async function assertSafeToFetch(url, timeoutMs) {
   }
 
   const hostname = u.hostname.toLowerCase();
-  if (hostname === 'localhost' || hostname === '0.0.0.0' || hostname === '127.0.0.1' || hostname === '::1') {
+  if (
+    hostname === 'localhost' ||
+    hostname === '0.0.0.0' ||
+    hostname === '127.0.0.1' ||
+    hostname === '::1'
+  ) {
     throw new Error('禁止访问本机地址');
   }
   if (hostname.endsWith('.local')) {
@@ -175,14 +200,14 @@ async function assertSafeToFetch(url, timeoutMs) {
     throw new Error('DNS 解析失败或无结果');
   }
 
-  const hasPrivate = records.some(r => isPrivateIp(r.address));
+  const hasPrivate = records.some((r) => isPrivateIp(r.address));
   if (hasPrivate) throw new Error('DNS 解析到内网/保留地址，已阻断');
 }
 
 function buildHeaders(userAgent) {
   return {
     'user-agent': userAgent,
-    accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   };
 }
 
@@ -200,7 +225,7 @@ async function fetchWithRedirects(url, { timeoutMs, maxRedirects, headers, maxBy
         method: 'GET',
         redirect: 'manual',
         headers,
-        signal: controller.signal
+        signal: controller.signal,
       });
     } finally {
       clearTimeout(timer);
@@ -283,7 +308,7 @@ function extractFeedLinksFromHtml(html, baseUrl) {
   }
 
   // 简单排序：优先 RSS，其次 Atom
-  const rank = url => (url.includes('atom') ? 2 : 1);
+  const rank = (url) => (url.includes('atom') ? 2 : 1);
   return [...new Set(candidates)].sort((a, b) => rank(a) - rank(b));
 }
 
@@ -309,11 +334,15 @@ async function discoverFeedUrl(siteUrl, settings, deadlineTs) {
     timeoutMs: Math.min(settings.fetch.timeoutMs, timeRemaining),
     maxRedirects: settings.fetch.maxRedirects,
     headers: buildHeaders(settings.fetch.userAgent),
-    maxBytes: settings.fetch.htmlMaxBytes
+    maxBytes: settings.fetch.htmlMaxBytes,
   });
 
   const contentType = homepage.response.headers.get('content-type') || '';
-  if (/text\/html/i.test(contentType) || /application\/xhtml\+xml/i.test(contentType) || !contentType) {
+  if (
+    /text\/html/i.test(contentType) ||
+    /application\/xhtml\+xml/i.test(contentType) ||
+    !contentType
+  ) {
     const candidates = extractFeedLinksFromHtml(homepage.text, homepage.url);
     if (candidates.length > 0) {
       return candidates[0];
@@ -325,7 +354,8 @@ async function discoverFeedUrl(siteUrl, settings, deadlineTs) {
 
 function stripHtmlToText(input) {
   const raw = String(input || '');
-  const withoutTags = raw.replace(/<script[\s\S]*?<\/script>/gi, '')
+  const withoutTags = raw
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<style[\s\S]*?<\/style>/gi, '')
     .replace(/<[^>]+>/g, ' ');
 
@@ -363,17 +393,14 @@ function normalizePublishedAt(item) {
 }
 
 function normalizeArticle(item, sourceSite, settings) {
-  const title = (item && item.title !== undefined) ? String(item.title).trim() : '';
+  const title = item && item.title !== undefined ? String(item.title).trim() : '';
   if (!title) return null;
 
   const link = item && item.link ? String(item.link).trim() : '';
   if (!isHttpUrl(link)) return null;
 
   const summaryRaw =
-    (item && item.contentSnippet) ||
-    (item && item.summary) ||
-    (item && item.content) ||
-    '';
+    (item && item.contentSnippet) || (item && item.summary) || (item && item.content) || '';
   const summaryText = stripHtmlToText(summaryRaw);
   const summary = settings.articles.summaryMaxLength
     ? truncateText(summaryText, settings.articles.summaryMaxLength)
@@ -393,7 +420,7 @@ function normalizeArticle(item, sourceSite, settings) {
     source,
     // 站点首页 URL（用于生成端按分类聚合展示；文章 url 为具体文章链接）
     sourceUrl,
-    icon
+    icon,
   };
 }
 
@@ -406,13 +433,17 @@ async function fetchAndParseFeed(feedUrl, settings, parser, deadlineTs) {
     maxRedirects: settings.fetch.maxRedirects,
     headers: {
       ...buildHeaders(settings.fetch.userAgent),
-      accept: 'application/rss+xml,application/atom+xml,application/xml,text/xml;q=0.9,*/*;q=0.8'
+      accept: 'application/rss+xml,application/atom+xml,application/xml,text/xml;q=0.9,*/*;q=0.8',
     },
-    maxBytes: settings.fetch.feedMaxBytes
+    maxBytes: settings.fetch.feedMaxBytes,
   });
 
   const parsed = await parser.parseString(feed.text);
-  return { feedUrl: feed.url, feedTitle: parsed.title || '', items: Array.isArray(parsed.items) ? parsed.items : [] };
+  return {
+    feedUrl: feed.url,
+    feedTitle: parsed.title || '',
+    items: Array.isArray(parsed.items) ? parsed.items : [],
+  };
 }
 
 async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
@@ -425,18 +456,18 @@ async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
         feedUrl: '',
         status: 'skipped',
         error: '无效 URL（需为 http/https）',
-        fetchedAt: new Date().toISOString()
+        fetchedAt: new Date().toISOString(),
       },
-      articles: []
+      articles: [],
     };
   }
 
   let lastError = null;
 
-  const tryOnce = async feedUrl => {
+  const tryOnce = async (feedUrl) => {
     const parsed = await fetchAndParseFeed(feedUrl, settings, parser, deadlineTs);
     const normalized = parsed.items
-      .map(item => normalizeArticle(item, sourceSite, settings))
+      .map((item) => normalizeArticle(item, sourceSite, settings))
       .filter(Boolean)
       .slice(0, settings.articles.perSite);
     return { feedUrl: parsed.feedUrl, articles: normalized };
@@ -444,7 +475,9 @@ async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
 
   const attempt = async () => {
     const discovered = await discoverFeedUrl(url, settings, deadlineTs);
-    const candidates = discovered ? [discovered, ...buildCommonFeedUrls(url)] : buildCommonFeedUrls(url);
+    const candidates = discovered
+      ? [discovered, ...buildCommonFeedUrls(url)]
+      : buildCommonFeedUrls(url);
 
     for (const candidate of [...new Set(candidates)]) {
       try {
@@ -458,7 +491,7 @@ async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
     throw lastError || new Error('未找到可用 Feed');
   };
 
-  const startedAt = Date.now();
+  const elapsedMs = startTimer();
   for (let i = 0; i <= settings.fetch.maxRetries; i += 1) {
     try {
       // eslint-disable-next-line no-await-in-loop
@@ -471,9 +504,9 @@ async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
           status: 'success',
           error: '',
           fetchedAt: new Date().toISOString(),
-          durationMs: Date.now() - startedAt
+          durationMs: elapsedMs(),
         },
-        articles: res.articles
+        articles: res.articles,
       };
     } catch (e) {
       lastError = e;
@@ -488,9 +521,9 @@ async function processSourceSite(sourceSite, settings, parser, deadlineTs) {
       status: 'failed',
       error: lastError ? String(lastError.message || lastError) : '未知错误',
       fetchedAt: new Date().toISOString(),
-      durationMs: Date.now() - startedAt
+      durationMs: elapsedMs(),
     },
-    articles: []
+    articles: [],
   };
 }
 
@@ -524,12 +557,15 @@ async function mapWithConcurrency(items, concurrency, worker) {
 function collectSitesRecursively(node, output) {
   if (!node || typeof node !== 'object') return;
 
-  if (Array.isArray(node.subcategories)) node.subcategories.forEach(child => collectSitesRecursively(child, output));
-  if (Array.isArray(node.groups)) node.groups.forEach(child => collectSitesRecursively(child, output));
-  if (Array.isArray(node.subgroups)) node.subgroups.forEach(child => collectSitesRecursively(child, output));
+  if (Array.isArray(node.subcategories))
+    node.subcategories.forEach((child) => collectSitesRecursively(child, output));
+  if (Array.isArray(node.groups))
+    node.groups.forEach((child) => collectSitesRecursively(child, output));
+  if (Array.isArray(node.subgroups))
+    node.subgroups.forEach((child) => collectSitesRecursively(child, output));
 
   if (Array.isArray(node.sites)) {
-    node.sites.forEach(site => {
+    node.sites.forEach((site) => {
       if (site && typeof site === 'object') output.push(site);
     });
   }
@@ -538,26 +574,27 @@ function collectSitesRecursively(node, output) {
 function buildFlatSitesFromCategories(categories) {
   const out = [];
   if (!Array.isArray(categories)) return out;
-  categories.forEach(category => collectSitesRecursively(category, out));
+  categories.forEach((category) => collectSitesRecursively(category, out));
   return out;
 }
 
 async function syncArticlesForPage(pageId, pageConfig, config, settings) {
   const sourceSites = Array.isArray(pageConfig && pageConfig.sites)
     ? pageConfig.sites
-    : buildFlatSitesFromCategories(pageConfig && Array.isArray(pageConfig.categories) ? pageConfig.categories : []);
+    : buildFlatSitesFromCategories(
+        pageConfig && Array.isArray(pageConfig.categories) ? pageConfig.categories : []
+      );
 
+  const elapsedMs = startTimer();
   const startedAt = Date.now();
   const deadlineTs = startedAt + settings.fetch.totalTimeoutMs;
 
   const parser = new Parser({
-    timeout: settings.fetch.timeoutMs
+    timeout: settings.fetch.timeoutMs,
   });
 
-  const results = await mapWithConcurrency(
-    sourceSites,
-    settings.fetch.concurrency,
-    async site => processSourceSite(site, settings, parser, deadlineTs)
+  const results = await mapWithConcurrency(sourceSites, settings.fetch.concurrency, async (site) =>
+    processSourceSite(site, settings, parser, deadlineTs)
   );
 
   const sites = [];
@@ -585,9 +622,9 @@ async function syncArticlesForPage(pageId, pageConfig, config, settings) {
 
   const limitedArticles = articles.slice(0, settings.articles.total);
 
-  const successSites = sites.filter(s => s.status === 'success').length;
-  const failedSites = sites.filter(s => s.status === 'failed').length;
-  const skippedSites = sites.filter(s => s.status === 'skipped').length;
+  const successSites = sites.filter((s) => s.status === 'success').length;
+  const failedSites = sites.filter((s) => s.status === 'failed').length;
+  const skippedSites = sites.filter((s) => s.status === 'skipped').length;
 
   const cache = {
     version: '1.0',
@@ -602,8 +639,8 @@ async function syncArticlesForPage(pageId, pageConfig, config, settings) {
       failedSites,
       skippedSites,
       totalArticles: limitedArticles.length,
-      durationMs: Date.now() - startedAt
-    }
+      durationMs: elapsedMs(),
+    },
   };
 
   const cacheDir = path.resolve(process.cwd(), settings.cacheDir);
@@ -637,43 +674,65 @@ function pickArticlesPages(config, onlyPageId) {
 }
 
 async function main() {
+  const elapsedMs = startTimer();
   const args = process.argv.slice(2);
-  const pageArgIndex = args.findIndex(a => a === '--page');
+  const pageArgIndex = args.findIndex((a) => a === '--page');
   const onlyPageId = pageArgIndex >= 0 ? args[pageArgIndex + 1] : null;
+
+  log.info('开始', { page: onlyPageId || '' });
 
   const config = loadConfig();
   const settings = getRssSettings(config);
 
   if (!settings.enabled) {
-    console.log('[INFO] RSS 已禁用（RSS_ENABLED=false），跳过。');
+    log.ok('RSS 已禁用，跳过', { env: 'RSS_ENABLED=false' });
     return;
   }
 
   const pages = pickArticlesPages(config, onlyPageId);
   if (pages.length === 0) {
-    console.log('[INFO] 未找到需要同步的 articles 页面。');
+    log.ok('未找到需要同步的 articles 页面，跳过');
     return;
   }
 
-  console.log(`[INFO] 准备同步 ${pages.length} 个 articles 页面缓存…`);
+  log.info('准备同步 articles 页面缓存', { pages: pages.length });
+
+  let success = 0;
+  let failed = 0;
 
   for (const { pageId, pageConfig } of pages) {
     try {
       // eslint-disable-next-line no-await-in-loop
       const { cachePath, cache } = await syncArticlesForPage(pageId, pageConfig, config, settings);
-      console.log(`[INFO] 已生成缓存：${cachePath}（articles=${cache.stats.totalArticles}, sites=${cache.stats.totalSites}）`);
+      success += 1;
+      log.ok('已生成缓存', {
+        page: pageId,
+        cache: cachePath,
+        articles: cache && cache.stats ? cache.stats.totalArticles : '',
+        sites: cache && cache.stats ? cache.stats.totalSites : '',
+      });
     } catch (e) {
-      console.warn(`[WARN] 页面 ${pageId} 同步失败：${e.message || e}`);
+      failed += 1;
+      log.warn('页面同步失败，已跳过（best-effort）', {
+        page: pageId,
+        message: e && e.message ? e.message : String(e),
+      });
+      if (isVerbose() && e && e.stack) console.error(e.stack);
       // best-effort：不阻断其他页面/后续 build
     }
   }
+
+  log.ok('完成', { ms: elapsedMs(), pages: pages.length, success, failed });
 }
 
 if (require.main === module) {
-  main().catch(err => {
-    console.error('[ERROR] sync-articles 执行失败：', err);
-    // best-effort：除非是非常规异常，否则不阻断 CI；此处仍保留非 0 退出码便于本地排查
-    process.exitCode = 1;
+  main().catch((err) => {
+    log.error('执行失败（best-effort，不阻断后续 build/deploy）', {
+      message: err && err.message ? err.message : String(err),
+    });
+    if (isVerbose() && err && err.stack) console.error(err.stack);
+    // best-effort：不阻断后续 build/deploy（错误已输出到日志，便于排查）
+    process.exitCode = 0;
   });
 }
 
@@ -683,5 +742,5 @@ module.exports = {
   extractFeedLinksFromHtml,
   stripHtmlToText,
   normalizeArticle,
-  buildFlatSitesFromCategories
+  buildFlatSitesFromCategories,
 };

@@ -106,24 +106,54 @@ MeNav 配置系统采用“完全替换”策略（不合并），按以下优�
    - `icons.mode: favicon | manual`
    - `favicon`：会请求第三方服务（Google）获取站点 favicon，失败自动回退到 Font Awesome 图标
    - `manual`：完全使用手动 Font Awesome 图标，不发起外部请求（适合内网/离线/隐私敏感场景）
+   - `icons.region: com | cn`（默认 `com`）
+     - `com`：优先使用 `gstatic.com`（国际版），失败后回退到 `gstatic.cn`（中国版）
+     - `cn`：优先使用 `gstatic.cn`（中国版），失败后回退到 `gstatic.com`（国际版）
+     - 说明：如果你在中国大陆且访问 gstatic.com 较慢，建议设置为 `cn` 以提升图标加载速度
+   - 站点级覆盖（可选，写在 `pages/*.yml` 的每个 `sites[]` 节点上）：
+     - `faviconUrl`：为单个站点指定图标链接（可远程或本地相对路径；本地建议以 `assets/` 开头，构建会复制到 `dist/` 同路径），优先级最高
+     - `forceIconMode: favicon | manual`：强制该站点使用指定模式（不设置则跟随全局 `icons.mode`）
+     - 优先级：`faviconUrl` > `forceIconMode` > 全局 `icons.mode`
+     - 示例：
+       ```yml
+       sites:
+         - name: 'Ant Design'
+           url: 'https://ant.design/'
+           icon: 'fas fa-th'
+           forceIconMode: manual # 强制使用手动图标，绕过 favicon 默认"地球"图标
+         - name: 'Example'
+           url: 'https://example.com/'
+           faviconUrl: 'https://example.com/favicon.png' # 单站点自定义 favicon
+       ```
 
-3. **字体**
+3. **安全策略（链接白名单）**
+   - `security.allowedSchemes`：允许在页面中渲染为可点击链接的 URL scheme 白名单
+   - 默认仅允许：`http/https/mailto/tel` + 所有相对链接（`#`、`/`、`./`、`../`、`?` 开头）
+   - 其他 scheme 会被安全降级为 `#` 并输出告警；如需支持 `obsidian://`、`vscode://` 等协议，可在此显式放行
+
+4. **字体**
    - `fonts`：单一字体配置项，用于设置全站基础字体（`body` 等）
    - 支持 `source: css | google | system`（分别表示第三方 CSS、Google Fonts、系统字体）
-   - 首页副标题（渐变发光样式）字体固定为 `Quicksand`，不通过配置项控制
+   - 可选 `fonts.preload: true`：用 `preload + onload` 的方式非阻塞加载外链字体 CSS（更利于首屏性能）
+   - 首页副标题（渐变发光样式）使用全站基础字体（跟随 `fonts` 配置）
 
-4. **顶部欢迎信息与社交链接**
+5. **主题（默认明暗模式）**
+   - `theme.mode: dark | light | system`
+   - `dark/light`：首屏默认主题；用户点击按钮切换后会写入 localStorage 并覆盖该默认值
+   - `system`：跟随系统 `prefers-color-scheme`；用户手动切换后同样会写入 localStorage 并停止跟随
+
+6. **顶部欢迎信息与社交链接**
    - `profile`：首页顶部欢迎信息
    - `social`：侧边栏底部社交链接
    - `profile.title` / `profile.subtitle`：分别对应首页顶部主标题与副标题
 
-5. **导航**
+7. **导航**
    - `navigation[]`：页面入口列表，`id` 需唯一，并与 `pages/<id>.yml` 对应（例如 `id: common` 对应 `pages/common.yml`）
    - 默认首页由 `navigation` 数组顺序决定：**第一项即为首页（默认打开页）**，不再使用 `active` 字段
    - 图标使用 Font Awesome 类名字符串（例如 `fas fa-home`、`fab fa-github`）
    - 导航显示顺序与数组顺序一致，可通过调整数组顺序改变导航顺序
 
-6. **RSS（articles Phase 2）**
+8. **RSS（articles Phase 2）**
    - `rss.*`：仅用于 `npm run sync-articles`（联网抓取 RSS/Atom 并写入缓存）
    - `npm run build` 默认不联网；无缓存时 `articles` 页面会回退到 Phase 1 的站点入口展示
    - articles 页面会按 `articles.yml` 的分类进行聚合展示：某分类下配置的来源站点，其文章会显示在该分类下
@@ -131,7 +161,7 @@ MeNav 配置系统采用“完全替换”策略（不合并），按以下优�
    - 默认配置已将 `rss.cacheDir` 设为 `dev`（仓库默认 gitignore），避免误提交缓存文件；可按需改为自定义目录
    - GitHub Pages 部署工作流会在构建前自动执行 `npm run sync-articles`，并支持定时触发（默认每天 UTC 02:00；可在 `.github/workflows/deploy.yml` 调整）
 
-7. **GitHub（projects 热力图，可选）**
+9. **GitHub（projects 热力图，可选）**
    - `github.username`：你的 GitHub 用户名（用于 projects 页面标题栏右侧贡献热力图）
    - `github.heatmapColor`：热力图主题色（不带 `#`，例如 `339af0`）
    - `github.cacheDir`：projects 仓库元信息缓存目录（默认 `dev`，仓库默认 gitignore）
@@ -174,6 +204,40 @@ categories:
 兼容说明：
 
 - 若历史配置仍使用顶层 `sites`（旧结构），系统会自动映射为一个分类容器以保持页面结构一致（当前仅对 friends/articles 提供该兼容）。
+
+#### 内容页（template: content）
+
+内容页用于承载“关于 / 帮助 / 使用说明 / 更新日志 / 迁移指南 / 隐私说明”等纯文本内容。
+
+配置要点：
+
+- `template: content`
+- `content.file`：指向本地 Markdown 文件路径（推荐放在 `content/` 下）
+- Markdown 会在**构建期**渲染为 HTML（不是运行时 fetch）
+- 当前约束：
+  - 禁止 raw HTML（避免 XSS）
+  - 禁止图片（`![]()` 不会输出 `<img>`；本期不支持图片/附件）
+  - 链接会按 URL scheme 白名单策略处理：
+    - 默认允许：`http/https/mailto/tel` + 所有相对链接（`#`、`/`、`./`、`../`、`?` 开头）
+    - 其他 scheme 会被安全降级为 `#`（可用 `site.yml -> security.allowedSchemes` 显式放行）
+
+示例（以 about 页面为例）：
+
+```yml
+# config/user/pages/about.yml
+title: 关于
+subtitle: 项目说明
+template: content
+
+content:
+  file: content/about.md
+```
+
+对应内容文件：
+
+```text
+content/about.md
+```
 
 ### 多层级嵌套配置（2-4层）
 
@@ -229,46 +293,46 @@ MeNav 配置系统采用“完全替换”策略：只会选择一套目录加�
 
 ```yaml
 # 网站基本信息
-title: "我的个人导航"
-description: "个人收藏的网站导航页"
-keywords: "导航,网址,书签,个人主页"
+title: '我的个人导航'
+description: '个人收藏的网站导航页'
+keywords: '导航,网址,书签,个人主页'
 
 # 个人资料配置
 profile:
-  title: "个人导航站"
-  subtitle: "我收藏的精选网站"
+  title: '个人导航站'
+  subtitle: '我收藏的精选网站'
 
 # 字体：全站基础字体
 fonts:
   source: css
-  cssUrl: "https://fontsapi.zeoseven.com/292/main/result.css"
-  family: "LXGW WenKai"
+  cssUrl: 'https://fontsapi.zeoseven.com/292/main/result.css'
+  preload: true
+  family: 'LXGW WenKai'
   weight: normal
 
-	  
 # 社交媒体链接
 social:
-  - name: "GitHub"
-    url: "https://github.com/username"
-    icon: "fab fa-github"
-  - name: "Twitter"
-    url: "https://twitter.com/username"
-    icon: "fab fa-twitter"
+  - name: 'GitHub'
+    url: 'https://github.com/username'
+    icon: 'fab fa-github'
+  - name: 'Twitter'
+    url: 'https://twitter.com/username'
+    icon: 'fab fa-twitter'
 
 # 导航配置
 navigation:
-  - name: "常用"
-    icon: "fas fa-star"
-    id: "common"
-  - name: "项目"
-    icon: "fas fa-project-diagram"
-    id: "projects"
-  - name: "文章"
-    icon: "fas fa-book"
-    id: "articles"
-  - name: "书签"
-    icon: "fas fa-bookmark"
-    id: "bookmarks"
+  - name: '常用'
+    icon: 'fas fa-star'
+    id: 'common'
+  - name: '项目'
+    icon: 'fas fa-project-diagram'
+    id: 'projects'
+  - name: '文章'
+    icon: 'fas fa-book'
+    id: 'articles'
+  - name: '书签'
+    icon: 'fas fa-bookmark'
+    id: 'bookmarks'
 ```
 
 ### 通用页面配置示例（例如 common.yml）
@@ -276,25 +340,25 @@ navigation:
 ```yaml
 # 页面分类配置
 categories:
-  - name: "常用工具"
-    icon: "fas fa-tools"
+  - name: '常用工具'
+    icon: 'fas fa-tools'
     sites:
-      - name: "Google"
-        url: "https://www.google.com"
-        description: "全球最大的搜索引擎"
-        icon: "fab fa-google"
-      - name: "GitHub"
-        url: "https://github.com"
-        description: "代码托管平台"
-        icon: "fab fa-github"
-  
-  - name: "学习资源"
-    icon: "fas fa-graduation-cap"
+      - name: 'Google'
+        url: 'https://www.google.com'
+        description: '全球最大的搜索引擎'
+        icon: 'fab fa-google'
+      - name: 'GitHub'
+        url: 'https://github.com'
+        description: '代码托管平台'
+        icon: 'fab fa-github'
+
+  - name: '学习资源'
+    icon: 'fas fa-graduation-cap'
     sites:
-      - name: "MDN Web Docs"
-        url: "https://developer.mozilla.org"
-        description: "Web开发技术文档"
-        icon: "fab fa-firefox-browser"
+      - name: 'MDN Web Docs'
+        url: 'https://developer.mozilla.org'
+        description: 'Web开发技术文档'
+        icon: 'fab fa-firefox-browser'
 ```
 
 ## 最佳实践
