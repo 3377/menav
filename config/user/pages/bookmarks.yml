@@ -448,6 +448,10 @@ categories:
         url: https://stride.microsoft.com/
         icon: fab fa-microsoft
         description: ''
+      - name: Google - NotebookLM
+        url: https://notebooklm.google.com/notebook/62354306-88b8-43de-9987-6eb95046b84c
+        icon: fab fa-google
+        description: ''
   - name: 工具类
     icon: fas fa-folder
     path:
