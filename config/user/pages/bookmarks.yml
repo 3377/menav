@@ -192,6 +192,10 @@ categories:
         url: https://www.miaosscib.com/my/panel.php?page=1
         icon: fas fa-link
         description: ''
+      - name: ''
+        url: file:///C:/Users/niech/Desktop/%E9%87%91%E5%B8%81.png
+        icon: fas fa-link
+        description: ''
       - name: 全国计算机技术与软件专业技术资格（水平）考试
         url: http://bm.ruankao.org.cn/sign/in
         icon: fas fa-link
