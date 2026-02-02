@@ -5,6 +5,15 @@
 title: 我的书签
 subtitle: 从浏览器导入的书签收藏
 categories:
+  - name: 根目录书签
+    icon: fas fa-star
+    path:
+      - 根目录书签
+    sites:
+      - name: 书签集
+        url: edge://favorites/
+        icon: fas fa-link
+        description: ''
   - name: 常用导航
     icon: fas fa-folder
     path:
@@ -168,10 +177,6 @@ categories:
     path:
       - 个人
     sites:
-      - name: 书签集
-        url: edge://favorites/
-        icon: fas fa-link
-        description: ''
       - name: 一线运维各场景监控详解（2022最新汇总）
         url: https://mp.weixin.qq.com/s/YcfU_RTXtQQx_3JQ8puc7A
         icon: fas fa-link
@@ -210,6 +215,10 @@ categories:
         description: ''
       - name: onehub仪表盘
         url: https://bbbb.grafana.net/goto/WJ6w7UNHg?orgId=1
+        icon: fas fa-link
+        description: ''
+      - name: 全国移动电话卡“一证通查”
+        url: https://getsimnum.caict.ac.cn/#/
         icon: fas fa-link
         description: ''
   - name: AI相关
