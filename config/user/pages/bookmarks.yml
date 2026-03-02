@@ -2184,3 +2184,7 @@ categories:
         url: https://oa.yang800.com/seeyon/main.do?method=main
         icon: fas fa-link
         description: ''
+      - name: 海康云眸
+        url: https://www.hik-cloud.com/safe-center/index.html#/login/retail
+        icon: fas fa-link
+        description: ''
