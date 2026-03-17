@@ -2196,3 +2196,7 @@ categories:
         url: http://kq.yang800.com/iclock/imanager
         icon: fas fa-link
         description: ''
+      - name: 单点登录平台Casdoor搭建与使用，集成gitlab同步创建删除账号 - 运维笔记（ywbj.cc）
+        url: https://www.ywbj.cc/?p=1428&amp;#%E4%BA%8C%EF%BC%8CCasdoor%E6%90%AD%E5%BB%BA
+        icon: fas fa-link
+        description: ''
