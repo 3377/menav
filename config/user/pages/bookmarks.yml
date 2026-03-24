@@ -2200,3 +2200,7 @@ categories:
         url: https://www.ywbj.cc/?p=1428&amp;#%E4%BA%8C%EF%BC%8CCasdoor%E6%90%AD%E5%BB%BA
         icon: fas fa-link
         description: ''
+      - name: JumpServer 开源堡垒机
+        url: https://jump.yang800.com/core/auth/login/
+        icon: fas fa-link
+        description: ''
