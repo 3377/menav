@@ -2204,3 +2204,7 @@ categories:
         url: https://jump.yang800.com/core/auth/login/
         icon: fas fa-link
         description: ''
+      - name: LD OPEN HUB — 公益站导航
+        url: https://ldoh.105117.xyz/
+        icon: fas fa-link
+        description: ''
